@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.lethisis.com/"/>
-  <updated>2017-10-16T10:14:59.000Z</updated>
+  <updated>2017-10-16T10:17:10.000Z</updated>
   <id>http://www.lethisis.com/</id>
   
   <author>
@@ -21,18 +21,18 @@
     <link href="http://www.lethisis.com/2017/10/16/setSpan-%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98/"/>
     <id>http://www.lethisis.com/2017/10/16/setSpan-冲突问题/</id>
     <published>2017-10-16T10:12:38.000Z</published>
-    <updated>2017-10-16T10:14:59.000Z</updated>
+    <updated>2017-10-16T10:17:10.000Z</updated>
     
     <summary type="html">
     
     </summary>
     
-      <category term="Diary" scheme="http://www.lethisis.com/categories/Diary/"/>
+      <category term="android" scheme="http://www.lethisis.com/categories/android/"/>
     
     
-      <category term="Diary" scheme="http://www.lethisis.com/tags/Diary/"/>
+      <category term="span" scheme="http://www.lethisis.com/tags/span/"/>
     
-      <category term="Life" scheme="http://www.lethisis.com/tags/Life/"/>
+      <category term="Android" scheme="http://www.lethisis.com/tags/Android/"/>
     
   </entry>
   
