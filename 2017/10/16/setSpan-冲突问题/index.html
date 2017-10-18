@@ -79,16 +79,16 @@
 <link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-128x128-cloud.ico?v=5.1.3">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-cloud.ico?v=5.1.3">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-cloud.ico?v=5.1.3">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+  <link rel="mask-icon" href="/images/filter-drama.svg?v=5.1.3" color="#222">
 
 
 
@@ -107,18 +107,18 @@
 
 
 
-<meta name="description" content="参考http://stackoverflow.com/questions/29505622/spannablestringbuilder-set-clickablespan-more-than-once-cant-clickhttp://stackoverflow.com/questions/13118278/why-cant-use-the-same-span-object-to-setspa">
+<meta name="description" content="项目中要求做几个链接，点击跳转到不同的h5页面. 根据效果图，决定使用富文本做。先贴修改后的代码： 自定义一个ClickableSpan123456789101112131415161718192021public class CustomUrlSpan extends ClickableSpan &amp;#123;    private String url;    private String ti">
 <meta name="keywords" content="span,Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="setSpan 冲突问题">
 <meta property="og:url" content="http://www.lethisis.com/2017/10/16/setSpan-冲突问题/index.html">
 <meta property="og:site_name" content="小面包屑的博客">
-<meta property="og:description" content="参考http://stackoverflow.com/questions/29505622/spannablestringbuilder-set-clickablespan-more-than-once-cant-clickhttp://stackoverflow.com/questions/13118278/why-cant-use-the-same-span-object-to-setspa">
+<meta property="og:description" content="项目中要求做几个链接，点击跳转到不同的h5页面. 根据效果图，决定使用富文本做。先贴修改后的代码： 自定义一个ClickableSpan123456789101112131415161718192021public class CustomUrlSpan extends ClickableSpan &amp;#123;    private String url;    private String ti">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-18T07:28:14.000Z">
+<meta property="og:updated_time" content="2017-10-18T08:35:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="setSpan 冲突问题">
-<meta name="twitter:description" content="参考http://stackoverflow.com/questions/29505622/spannablestringbuilder-set-clickablespan-more-than-once-cant-clickhttp://stackoverflow.com/questions/13118278/why-cant-use-the-same-span-object-to-setspa">
+<meta name="twitter:description" content="项目中要求做几个链接，点击跳转到不同的h5页面. 根据效果图，决定使用富文本做。先贴修改后的代码： 自定义一个ClickableSpan123456789101112131415161718192021public class CustomUrlSpan extends ClickableSpan &amp;#123;    private String url;    private String ti">
 
 
 
@@ -402,10 +402,7 @@
       
 
       
-        <blockquote>
-<p>参考<br><a href="http://stackoverflow.com/questions/29505622/spannablestringbuilder-set-clickablespan-more-than-once-cant-click" target="_blank" rel="external">http://stackoverflow.com/questions/29505622/spannablestringbuilder-set-clickablespan-more-than-once-cant-click</a><br><a href="http://stackoverflow.com/questions/13118278/why-cant-use-the-same-span-object-to-setspan-above-twice" target="_blank" rel="external">http://stackoverflow.com/questions/13118278/why-cant-use-the-same-span-object-to-setspan-above-twice</a><br><a href="http://stackoverflow.com/questions/20077457/spannablestring-changes-color-first-time-but-not-when-reused" target="_blank" rel="external">http://stackoverflow.com/questions/20077457/spannablestring-changes-color-first-time-but-not-when-reused</a><br><a href="http://www.jianshu.com/p/be0d79b9d5e6" target="_blank" rel="external">http://www.jianshu.com/p/be0d79b9d5e6</a></p>
-</blockquote>
-<p>项目中要求做几个链接，点击跳转到不同的h5页面. 根据效果图，决定使用富文本做。<br>先贴修改后的代码：</p>
+        <p>项目中要求做几个链接，点击跳转到不同的h5页面. 根据效果图，决定使用富文本做。<br>先贴修改后的代码：</p>
 <p>自定义一个ClickableSpan<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CustomUrlSpan</span> <span class="keyword">extends</span> <span class="title">ClickableSpan</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> String url;</div><div class="line">    <span class="keyword">private</span> String title;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CustomUrlSpan</span><span class="params">( String url, String title)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.url = url;</div><div class="line">        <span class="keyword">this</span>.title = title;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View widget)</span> </span>&#123;</div><div class="line"></div><div class="line">        Intent intent = <span class="keyword">new</span> Intent(ContextUtils.getContext(), WebViewActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);</div><div class="line">        intent.putExtra(Constant.WEB_URL, url);</div><div class="line">        intent.putExtra(Constant.WEB_TITLE,title);</div><div class="line">        ContextUtils.getContext().startActivity(intent);</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>根据不同的航班，拼接不同的协议文本放到textview</p>
 <a id="more"></a>
@@ -446,12 +443,41 @@
 <p>有多个片段的时候使用，解决attached的冲突问题。</p>
 <hr>
 <p>原来如此，是因为没有使用CharacterStyle.wrap()而导致的问题。最后再自定义一个LinkMovementMethod处理click事件，问题就解决了。</p>
+<blockquote>
+<p>参考<br><a href="http://stackoverflow.com/questions/29505622/spannablestringbuilder-set-clickablespan-more-than-once-cant-click" target="_blank" rel="external">http://stackoverflow.com/questions/29505622/spannablestringbuilder-set-clickablespan-more-than-once-cant-click</a><br><a href="http://stackoverflow.com/questions/13118278/why-cant-use-the-same-span-object-to-setspan-above-twice" target="_blank" rel="external">http://stackoverflow.com/questions/13118278/why-cant-use-the-same-span-object-to-setspan-above-twice</a><br><a href="http://stackoverflow.com/questions/20077457/spannablestring-changes-color-first-time-but-not-when-reused" target="_blank" rel="external">http://stackoverflow.com/questions/20077457/spannablestring-changes-color-first-time-but-not-when-reused</a><br><a href="http://www.jianshu.com/p/be0d79b9d5e6" target="_blank" rel="external">http://www.jianshu.com/p/be0d79b9d5e6</a></p>
+</blockquote>
 
       
     </div>
     
     
     
+    <div>
+      
+        
+<div style="text-align:center;color: #ccc;font-size:14px;">
+------ 本文结束 感谢阅读------</div>
+<br/>
+<div>   
+  <ul class="post-copyright" style="border-left:3px solid #ff1700;list-style:none;margin:2em 0 0;padding:0.5em 1em;background-color:#f9f9f9">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      小面包屑
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://www.lethisis.com/2017/10/16/setSpan-冲突问题/" title="setSpan 冲突问题">http://www.lethisis.com/2017/10/16/setSpan-冲突问题/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>声明： </strong>
+      原创文章，有问题请评论中留言。支持友情链接。非商业转载请注明作者及出处。商业转载请联系作者本人。
+    </li>
+  </ul>
+</div>
+
+      
+    </div>
+
 
     
       <div>
