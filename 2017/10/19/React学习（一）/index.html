@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-128x128-cloud.ico?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-cloud.ico?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-cloud.ico?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/filter-drama.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="学习,react," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="小面包屑的博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="框架根据REACT官网的推荐，选择的框架为 React + Redux + wepack + es6  架构为MVC（Model-View-Controller）： model持有UI要展现的数据（store）View即UI的展现 （React）Controller用于控制 (Reducer)   经典前端目录结构123456789101112131415161718192021222324252">
+<meta name="keywords" content="学习,react">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React学习（一）">
+<meta property="og:url" content="http://www.lethisis.com/2017/10/19/React学习（一）/index.html">
+<meta property="og:site_name" content="小面包屑的博客">
+<meta property="og:description" content="框架根据REACT官网的推荐，选择的框架为 React + Redux + wepack + es6  架构为MVC（Model-View-Controller）： model持有UI要展现的数据（store）View即UI的展现 （React）Controller用于控制 (Reducer)   经典前端目录结构123456789101112131415161718192021222324252">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1760285-dd0ce0359da5a5f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1760285-f2df85a3498a92fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1760285-049fe6bef37a2bd7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-10-19T02:48:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React学习（一）">
+<meta name="twitter:description" content="框架根据REACT官网的推荐，选择的框架为 React + Redux + wepack + es6  架构为MVC（Model-View-Controller）： model持有UI要展现的数据（store）View即UI的展现 （React）Controller用于控制 (Reducer)   经典前端目录结构123456789101112131415161718192021222324252">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1760285-dd0ce0359da5a5f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.lethisis.com/2017/10/19/React学习（一）/"/>
+
+
+
+
+
+  <title>React学习（一） | 小面包屑的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小面包屑的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Code & Life</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.lethisis.com/2017/10/19/React学习（一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小面包屑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar_luwan.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小面包屑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">React学习（一）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-19T10:45:13+08:00">
+                2017-10-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2017/10/19/React学习（一）/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2017/10/19/React学习（一）/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/2017/10/19/React学习（一）/" class="leancloud_visitors" data-flag-title="React学习（一）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h1><p>根据REACT官网的推荐，选择的框架为 React + Redux + wepack + es6 </p>
+<p>架构为MVC（Model-View-Controller）：</p>
+<li>model持有UI要展现的数据（store）</li><br><li>View即UI的展现 （React）</li><br><li>Controller用于控制 (Reducer)</li>
+
+<hr>
+<h1 id="经典前端目录结构"><a href="#经典前端目录结构" class="headerlink" title="经典前端目录结构"></a>经典前端目录结构</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">- webapp/               # webapp根目录</div><div class="line">  - src/                # 开发目录</div><div class="line">    + css/              # css资源目录</div><div class="line">    + img/              # webapp图片资源目录</div><div class="line">    - js/               # webapp js&amp;jsx资源目录</div><div class="line">      - components/     # 标准组件存放目录</div><div class="line">          - foo/        # 组件foo</div><div class="line">            + css/      # 组件foo的样式</div><div class="line">            + js/       # 组件foo的逻辑</div><div class="line">            + tmpl/     # 组件foo的模板</div><div class="line">            index.js    # 组件foo的入口</div><div class="line">          + bar/        # 组件bar</div><div class="line">      + lib/            # 第三方纯js库</div><div class="line">      ...               # 根据项目需要任意添加的代码目录</div><div class="line">    + tmpl/             # webapp前端模板资源目录</div><div class="line">    a.html              # webapp入口文件a</div><div class="line">    b.html              # webapp入口文件b</div><div class="line">  - assets/             # 编译输出目录，即发布目录</div><div class="line">    + js/               # 编译输出的js目录</div><div class="line">    + img/              # 编译输出的图片目录</div><div class="line">    + css/              # 编译输出的css目录</div><div class="line">    a.html              # 编译输出的入口a</div><div class="line">    b.html              # 编译处理后的入口b</div><div class="line">  + mock/               # 假数据目录</div><div class="line">  app.js                # 本地server入口</div><div class="line">  routes.js             # 本地路由配置</div><div class="line">  webpack.config.js     # webpack配置文件</div><div class="line">  gulpfile.js           # gulp任务配置</div><div class="line">  package.json          # 项目配置</div><div class="line">  README.md             # 项目说明</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<hr>
+<h1 id="REACT"><a href="#REACT" class="headerlink" title="REACT"></a>REACT</h1><blockquote>
+<p>React 的主要思想是通过构建可复用组件来构建用户界面。所谓组件其实就是 <a href="https://zh.wikipedia.org/zh-cn/%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA" target="_blank" rel="external">有限状态机</a>，通过状态渲染对应的界面，且每个组件都有自己的生命周期，它规定了组件的状态和方法需要在哪个阶段进行改变和执行。</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1760285-dd0ce0359da5a5f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="状态机"></p>
+<p>生命周期：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">// react-lifecycle mixin</div><div class="line">import React from &apos;react&apos;;</div><div class="line">import ReactDom from &apos;react-dom&apos;;</div><div class="line">import LifeCycle from &apos;react-lifecycle&apos;;</div><div class="line"></div><div class="line">const body = document.body;</div><div class="line"></div><div class="line">const MyComponent = React.createClass(&#123;</div><div class="line">  mixins: [LifeCycle],</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    console.log(&apos;render&apos;);</div><div class="line">    return null;</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">ReactDom.render(&lt;MyComponent /&gt;, body);</div><div class="line">ReactDom.unmountComponentAtNode(body);</div><div class="line">ReactDom.render(&lt;MyComponent /&gt;, body);</div><div class="line">ReactDom.render(&lt;MyComponent /&gt;, body);</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>在自定义 React 组件时，根据需要会在组件生命周期的不同阶段实现不同的逻辑。为了查看 组件生命周期的执行顺序，你可以使用 <a href="https://github.com/jasonslyvia/react-lifecycle" target="_blank" rel="external">react-lifecycle mixin</a>，将此 mixin 添加到需要观察的组件中，当任何生命周期方法被调用时，都能在控制台观察到对应的生命周期的调用时状态。</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1760285-f2df85a3498a92fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="生命周期"></p>
+<hr>
+<h1 id="Redux-数据流"><a href="#Redux-数据流" class="headerlink" title="Redux(数据流)"></a>Redux(数据流)</h1><h2 id="state"><a href="#state" class="headerlink" title="state"></a>state</h2><blockquote>
+<p>这个对象就像 “Model”，区别是它并没有 setter（修改器方法）。因此其它的代码不能随意修复它，造成难以复现的 bug。<br>要想更新 state 中的数据，你需要发起一个 action。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  todos: [&#123;</div><div class="line">    text: &apos;Eat food&apos;,</div><div class="line">    completed: true</div><div class="line">  &#125;, &#123;</div><div class="line">    text: &apos;Exercise&apos;,</div><div class="line">    completed: false</div><div class="line">  &#125;],</div><div class="line">  visibilityFilter: &apos;SHOW_COMPLETED&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="action"><a href="#action" class="headerlink" title="action"></a>action</h2><blockquote>
+<p>Action 就是一个普通 JavaScript 对象</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123; type: &apos;ADD_TODO&apos;, text: &apos;Go to swimming pool&apos; &#125;</div><div class="line">&#123; type: &apos;TOGGLE_TODO&apos;, index: 1 &#125;</div><div class="line">&#123; type: &apos;SET_VISIBILITY_FILTER&apos;, filter: &apos;SHOW_ALL&apos; &#125;</div></pre></td></tr></table></figure>
+<h2 id="reducer"><a href="#reducer" class="headerlink" title="reducer"></a>reducer</h2><blockquote>
+<p>reducer 只是一个接收 state 和 action，并返回新的 state 的函数。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">visibilityFilter</span>(<span class="params">state = <span class="string">'SHOW_ALL'</span>, action</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (action.type === <span class="string">'SET_VISIBILITY_FILTER'</span>) &#123;</div><div class="line">    <span class="keyword">return</span> action.filter;</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">return</span> state;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">todos</span>(<span class="params">state = [], action</span>) </span>&#123;</div><div class="line">  <span class="keyword">switch</span> (action.type) &#123;</div><div class="line">  <span class="keyword">case</span> <span class="string">'ADD_TODO'</span>:</div><div class="line">    <span class="keyword">return</span> state.concat([&#123; <span class="attr">text</span>: action.text, <span class="attr">completed</span>: <span class="literal">false</span> &#125;]);</div><div class="line">  <span class="keyword">case</span> <span class="string">'TOGGLE_TODO'</span>:</div><div class="line">    <span class="keyword">return</span> state.map(<span class="function">(<span class="params">todo, index</span>) =&gt;</span></div><div class="line">      action.index === index ?</div><div class="line">        &#123; <span class="attr">text</span>: todo.text, <span class="attr">completed</span>: !todo.completed &#125; :</div><div class="line">        todo</div><div class="line">   )</div><div class="line">  <span class="keyword">default</span>:</div><div class="line">    <span class="keyword">return</span> state;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h2><blockquote>
+<p>官网对webpack的定义是MODULE BUNDLER，他的目的就是把有依赖关系的各种文件打包成一系列的静态资源。</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1760285-049fe6bef37a2bd7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+<p>每个项目下都必须配置有一个 webpack.config.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</div><div class="line"><span class="keyword">var</span> commonsPlugin = <span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(<span class="string">'common.js'</span>);</div><div class="line"> </div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="comment">//插件项</span></div><div class="line">    plugins: [commonsPlugin],</div><div class="line">    <span class="comment">//页面入口文件配置</span></div><div class="line">    entry: &#123;</div><div class="line">        index : <span class="string">'./src/js/page/index.js'</span></div><div class="line">    &#125;,</div><div class="line">    <span class="comment">//入口文件输出配置</span></div><div class="line">    output: &#123;</div><div class="line">        path: <span class="string">'dist/js/page'</span>,</div><div class="line">        filename: <span class="string">'[name].js'</span></div><div class="line">    &#125;,</div><div class="line">    <span class="built_in">module</span>: &#123;</div><div class="line">        <span class="comment">//加载器配置</span></div><div class="line">        loaders: [</div><div class="line">            &#123; <span class="attr">test</span>: <span class="regexp">/\.css$/</span>, <span class="attr">loader</span>: <span class="string">'style-loader!css-loader'</span> &#125;,</div><div class="line">            &#123; <span class="attr">test</span>: <span class="regexp">/\.js$/</span>, <span class="attr">loader</span>: <span class="string">'jsx-loader?harmony'</span> &#125;,</div><div class="line">            &#123; <span class="attr">test</span>: <span class="regexp">/\.scss$/</span>, <span class="attr">loader</span>: <span class="string">'style!css!sass?sourceMap'</span>&#125;,</div><div class="line">            &#123; <span class="attr">test</span>: <span class="regexp">/\.(png|jpg)$/</span>, <span class="attr">loader</span>: <span class="string">'url-loader?limit=8192'</span>&#125;</div><div class="line">        ]</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">//其它解决方案配置</span></div><div class="line">    resolve: &#123;</div><div class="line">        root: <span class="string">'E:/github/flux-example/src'</span>, <span class="comment">//绝对路径</span></div><div class="line">        extensions: [<span class="string">''</span>, <span class="string">'.js'</span>, <span class="string">'.json'</span>, <span class="string">'.scss'</span>],</div><div class="line">        alias: &#123;</div><div class="line">            AppStore : <span class="string">'js/stores/AppStores.js'</span>,</div><div class="line">            ActionType : <span class="string">'js/actions/ActionType.js'</span>,</div><div class="line">            AppAction : <span class="string">'js/actions/AppAction.js'</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<h1 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h1><blockquote>
+<p>ECMAScript 6.0（简称ES6）是JavaScript语言的下一代标准.</p>
+</blockquote>
+<h2 id="Bable"><a href="#Bable" class="headerlink" title="Bable"></a>Bable</h2><blockquote>
+<p>能够实现 ES6 到 ES5 的代码转换多亏了 <a href="https://babeljs.io/" target="_blank" rel="external">Babel</a> (以前叫 6to5) 以及 Traceur 之类的项目。这些转换器 (更准确地说是源代码到源代码的编译器) 可以把你写的符合 ECMAScript 6 标准的代码完美地转换为 ECMAScript 5 标准的代码，并且可以确保良好地运行在所有主流 JavaScript 引擎中。</p>
+</blockquote>
+<h2 id="ES6语法例子"><a href="#ES6语法例子" class="headerlink" title="ES6语法例子"></a>ES6语法例子</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> <span class="string">'core-js/shim'</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</div><div class="line"></div><div class="line">  <span class="keyword">constructor</span>( name ) &#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  sayHello() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">`Hello <span class="subst">$&#123; <span class="keyword">this</span>.name &#125;</span>!`</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  sayHelloThreeTimes() &#123;</div><div class="line">    <span class="keyword">let</span> hello = <span class="keyword">this</span>.sayHello();</div><div class="line">    <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123; hello &#125;</span> `</span>.repeat(<span class="number">3</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<p>参考资料：<br>react<br>    <a href="http://segmentfault.com/a/1190000003940416?utm_source=APP&amp;utm_medium=iOS&amp;utm_campaign=socialShare&amp;from=groupmessage&amp;isappinstalled=1" target="_blank" rel="external">http://segmentfault.com/a/1190000003940416?utm_source=APP&amp;utm_medium=iOS&amp;utm_campaign=socialShare&amp;from=groupmessage&amp;isappinstalled=1</a><br>    <a href="http://top.jobbole.com/15576/" target="_blank" rel="external">http://top.jobbole.com/15576/</a></p>
+<p>react-router<br>    <a href="https://github.com/rackt/react-router" target="_blank" rel="external">https://github.com/rackt/react-router</a></p>
+<p>redux<br>    <a href="http://camsong.github.io/redux-in-chinese/" target="_blank" rel="external">http://camsong.github.io/redux-in-chinese/</a><br>    <a href="https://github.com/rackt/redux" target="_blank" rel="external">https://github.com/rackt/redux</a>         examples</p>
+<p>redux-router<br>    <a href="https://github.com/acdlite/redux-router" target="_blank" rel="external">https://github.com/acdlite/redux-router</a>         examples</p>
+<p>redux-form<br>    <a href="https://github.com/erikras/redux-form" target="_blank" rel="external">https://github.com/erikras/redux-form</a></p>
+<p>babel<br>    es6<br>        <a href="http://es6.ruanyifeng.com/#docs/intro" target="_blank" rel="external">http://es6.ruanyifeng.com/#docs/intro</a></p>
+<p>webpack<br>    <a href="http://segmentfault.com/a/1190000003499526" target="_blank" rel="external">http://segmentfault.com/a/1190000003499526</a><br>    <a href="http://segmentfault.com/a/1190000002551952" target="_blank" rel="external">http://segmentfault.com/a/1190000002551952</a><br>    <a href="https://blog.crazycoder.cc/p/react-using-webpack" target="_blank" rel="external">https://blog.crazycoder.cc/p/react-using-webpack</a></p>
+<p>fetch<br>    <a href="http://www.thinksaas.cn/group/topic/396019/" target="_blank" rel="external">http://www.thinksaas.cn/group/topic/396019/</a><br>    <a href="http://www.tuicool.com/articles/QZBJ7zJ" target="_blank" rel="external">http://www.tuicool.com/articles/QZBJ7zJ</a></p>
+
+      
+    </div>
+    
+    
+    
+    <div>
+      
+        
+<div style="text-align:center;color: #ccc;font-size:14px;">
+------ 本文结束 感谢阅读------</div>
+<br/>
+<div>   
+  <ul class="post-copyright" style="border-left:3px solid #ff1700;list-style:none;margin:2em 0 0;padding:0.5em 1em;background-color:#f9f9f9">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      小面包屑
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://www.lethisis.com/2017/10/19/React学习（一）/" title="React学习（一）">http://www.lethisis.com/2017/10/19/React学习（一）/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>声明： </strong>
+      原创文章，有问题请评论中留言。支持友情链接。非商业转载请注明作者及出处。商业转载请联系作者本人。
+    </li>
+  </ul>
+</div>
+
+      
+    </div>
+
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode_for_gh_857b9a059fb9_258.jpg" alt="小面包屑 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的公众号！</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习/" rel="tag"># 学习</a>
+          
+            <a href="/tags/react/" rel="tag"># react</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/19/JPUSH-推送通知栏图标/" rel="next" title="JPUSH(极光) 推送通知栏图标">
+                <i class="fa fa-chevron-left"></i> JPUSH(极光) 推送通知栏图标
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/19/WeakReference-弱引用与内存泄漏/" rel="prev" title="WeakReference 弱引用与内存泄漏">
+                WeakReference 弱引用与内存泄漏 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="SOHUCS"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar_luwan.jpeg"
+                alt="小面包屑" />
+            
+              <p class="site-author-name" itemprop="name">小面包屑</p>
+              <p class="site-description motion-element" itemprop="description">就喜欢这样记录一下</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/extramoney" target="_blank" title="GitHub" rel="external nofollow">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://www.jianshu.com/u/7828c04ec9ca" target="_blank" title="简书" rel="external nofollow">
+                    
+                      <i class="fa fa-fw fa-link"></i>简书</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#框架"><span class="nav-number">1.</span> <span class="nav-text">框架</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#经典前端目录结构"><span class="nav-number">2.</span> <span class="nav-text">经典前端目录结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#REACT"><span class="nav-number">3.</span> <span class="nav-text">REACT</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Redux-数据流"><span class="nav-number">4.</span> <span class="nav-text">Redux(数据流)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#state"><span class="nav-number">4.1.</span> <span class="nav-text">state</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#action"><span class="nav-number">4.2.</span> <span class="nav-text">action</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reducer"><span class="nav-number">4.3.</span> <span class="nav-text">reducer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack"><span class="nav-number">4.4.</span> <span class="nav-text">webpack</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ES6"><span class="nav-number">5.</span> <span class="nav-text">ES6</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Bable"><span class="nav-number">5.1.</span> <span class="nav-text">Bable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6语法例子"><span class="nav-number">5.2.</span> <span class="nav-text">ES6语法例子</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小面包屑</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">NexT.Mist</a> v5.1.3
+
+<span class="post-meta-divider">|</span>
+</div>
+
+
+<div class="theme-info">
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+本站总访问量 <span id="busuanzi_value_site_pv"></span> 次&nbsp&nbsp&nbsp
+本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</div>
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cytgPcluM';
+      var conf = 'c56923bb4a3881d92bccbebd23b7abf9';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("cMR2jxHtdxqiJIqjoizePELm-gzGzoHsz", "nXoySFNtF4zR5aibCOQgTgGW");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
