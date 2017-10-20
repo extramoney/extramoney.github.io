@@ -5,9 +5,9 @@
   <subtitle>Code &amp; Life</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://www.lethisis.com/"/>
+  <link href="http://lethisis.com/"/>
   <updated>2017-10-19T05:36:53.000Z</updated>
-  <id>http://www.lethisis.com/</id>
+  <id>http://lethisis.com/</id>
   
   <author>
     <name>小面包屑</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>自定义view富文本RichText</title>
-    <link href="http://www.lethisis.com/2017/10/19/%E8%87%AA%E5%AE%9A%E4%B9%89view%E5%AF%8C%E6%96%87%E6%9C%ACRichText/"/>
-    <id>http://www.lethisis.com/2017/10/19/自定义view富文本RichText/</id>
+    <link href="http://lethisis.com/2017/10/19/%E8%87%AA%E5%AE%9A%E4%B9%89view%E5%AF%8C%E6%96%87%E6%9C%ACRichText/"/>
+    <id>http://lethisis.com/2017/10/19/自定义view富文本RichText/</id>
     <published>2017-10-19T05:35:39.000Z</published>
     <updated>2017-10-19T05:36:53.000Z</updated>
     
@@ -36,19 +36,19 @@
     
     </summary>
     
-      <category term="android" scheme="http://www.lethisis.com/categories/android/"/>
+      <category term="android" scheme="http://lethisis.com/categories/android/"/>
     
     
-      <category term="Android" scheme="http://www.lethisis.com/tags/Android/"/>
+      <category term="Android" scheme="http://lethisis.com/tags/Android/"/>
     
-      <category term="view" scheme="http://www.lethisis.com/tags/view/"/>
+      <category term="view" scheme="http://lethisis.com/tags/view/"/>
     
   </entry>
   
   <entry>
     <title>android蓝牙了解</title>
-    <link href="http://www.lethisis.com/2017/10/19/android%E8%93%9D%E7%89%99%E4%BA%86%E8%A7%A3/"/>
-    <id>http://www.lethisis.com/2017/10/19/android蓝牙了解/</id>
+    <link href="http://lethisis.com/2017/10/19/android%E8%93%9D%E7%89%99%E4%BA%86%E8%A7%A3/"/>
+    <id>http://lethisis.com/2017/10/19/android蓝牙了解/</id>
     <published>2017-10-19T02:51:10.000Z</published>
     <updated>2017-10-19T03:08:15.000Z</updated>
     
@@ -62,21 +62,21 @@
     
     </summary>
     
-      <category term="android" scheme="http://www.lethisis.com/categories/android/"/>
+      <category term="android" scheme="http://lethisis.com/categories/android/"/>
     
     
-      <category term="Android" scheme="http://www.lethisis.com/tags/Android/"/>
+      <category term="Android" scheme="http://lethisis.com/tags/Android/"/>
     
-      <category term="学习" scheme="http://www.lethisis.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+      <category term="学习" scheme="http://lethisis.com/tags/%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="蓝牙" scheme="http://www.lethisis.com/tags/%E8%93%9D%E7%89%99/"/>
+      <category term="蓝牙" scheme="http://lethisis.com/tags/%E8%93%9D%E7%89%99/"/>
     
   </entry>
   
   <entry>
     <title>WeakReference 弱引用与内存泄漏</title>
-    <link href="http://www.lethisis.com/2017/10/19/WeakReference-%E5%BC%B1%E5%BC%95%E7%94%A8%E4%B8%8E%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/"/>
-    <id>http://www.lethisis.com/2017/10/19/WeakReference-弱引用与内存泄漏/</id>
+    <link href="http://lethisis.com/2017/10/19/WeakReference-%E5%BC%B1%E5%BC%95%E7%94%A8%E4%B8%8E%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/"/>
+    <id>http://lethisis.com/2017/10/19/WeakReference-弱引用与内存泄漏/</id>
     <published>2017-10-19T02:49:07.000Z</published>
     <updated>2017-10-19T02:50:38.000Z</updated>
     
@@ -101,19 +101,19 @@
     
     </summary>
     
-      <category term="java" scheme="http://www.lethisis.com/categories/java/"/>
+      <category term="java" scheme="http://lethisis.com/categories/java/"/>
     
     
-      <category term="弱引用" scheme="http://www.lethisis.com/tags/%E5%BC%B1%E5%BC%95%E7%94%A8/"/>
+      <category term="弱引用" scheme="http://lethisis.com/tags/%E5%BC%B1%E5%BC%95%E7%94%A8/"/>
     
-      <category term="java" scheme="http://www.lethisis.com/tags/java/"/>
+      <category term="java" scheme="http://lethisis.com/tags/java/"/>
     
   </entry>
   
   <entry>
     <title>React学习（一）</title>
-    <link href="http://www.lethisis.com/2017/10/19/React%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/"/>
-    <id>http://www.lethisis.com/2017/10/19/React学习（一）/</id>
+    <link href="http://lethisis.com/2017/10/19/React%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>http://lethisis.com/2017/10/19/React学习（一）/</id>
     <published>2017-10-19T02:45:13.000Z</published>
     <updated>2017-10-19T02:48:36.000Z</updated>
     
@@ -130,19 +130,19 @@
     
     </summary>
     
-      <category term="react" scheme="http://www.lethisis.com/categories/react/"/>
+      <category term="react" scheme="http://lethisis.com/categories/react/"/>
     
     
-      <category term="学习" scheme="http://www.lethisis.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+      <category term="学习" scheme="http://lethisis.com/tags/%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="react" scheme="http://www.lethisis.com/tags/react/"/>
+      <category term="react" scheme="http://lethisis.com/tags/react/"/>
     
   </entry>
   
   <entry>
     <title>JPUSH(极光) 推送通知栏图标</title>
-    <link href="http://www.lethisis.com/2017/10/19/JPUSH-%E6%8E%A8%E9%80%81%E9%80%9A%E7%9F%A5%E6%A0%8F%E5%9B%BE%E6%A0%87/"/>
-    <id>http://www.lethisis.com/2017/10/19/JPUSH-推送通知栏图标/</id>
+    <link href="http://lethisis.com/2017/10/19/JPUSH-%E6%8E%A8%E9%80%81%E9%80%9A%E7%9F%A5%E6%A0%8F%E5%9B%BE%E6%A0%87/"/>
+    <id>http://lethisis.com/2017/10/19/JPUSH-推送通知栏图标/</id>
     <published>2017-10-19T02:42:35.000Z</published>
     <updated>2017-10-19T02:44:16.000Z</updated>
     
@@ -160,19 +160,19 @@
     
     </summary>
     
-      <category term="android" scheme="http://www.lethisis.com/categories/android/"/>
+      <category term="android" scheme="http://lethisis.com/categories/android/"/>
     
     
-      <category term="Android" scheme="http://www.lethisis.com/tags/Android/"/>
+      <category term="Android" scheme="http://lethisis.com/tags/Android/"/>
     
-      <category term="推送" scheme="http://www.lethisis.com/tags/%E6%8E%A8%E9%80%81/"/>
+      <category term="推送" scheme="http://lethisis.com/tags/%E6%8E%A8%E9%80%81/"/>
     
   </entry>
   
   <entry>
     <title>ViewDragHelper理解</title>
-    <link href="http://www.lethisis.com/2017/10/19/ViewDragHelper%E7%90%86%E8%A7%A3/"/>
-    <id>http://www.lethisis.com/2017/10/19/ViewDragHelper理解/</id>
+    <link href="http://lethisis.com/2017/10/19/ViewDragHelper%E7%90%86%E8%A7%A3/"/>
+    <id>http://lethisis.com/2017/10/19/ViewDragHelper理解/</id>
     <published>2017-10-19T02:37:19.000Z</published>
     <updated>2017-10-19T02:39:47.000Z</updated>
     
@@ -193,19 +193,19 @@
     
     </summary>
     
-      <category term="android" scheme="http://www.lethisis.com/categories/android/"/>
+      <category term="android" scheme="http://lethisis.com/categories/android/"/>
     
     
-      <category term="Android" scheme="http://www.lethisis.com/tags/Android/"/>
+      <category term="Android" scheme="http://lethisis.com/tags/Android/"/>
     
-      <category term="ViewDragHelper" scheme="http://www.lethisis.com/tags/ViewDragHelper/"/>
+      <category term="ViewDragHelper" scheme="http://lethisis.com/tags/ViewDragHelper/"/>
     
   </entry>
   
   <entry>
     <title>android 内存泄漏(OOM)问题总结</title>
-    <link href="http://www.lethisis.com/2017/10/19/android-%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F-OOM-%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
-    <id>http://www.lethisis.com/2017/10/19/android-内存泄漏-OOM-问题总结/</id>
+    <link href="http://lethisis.com/2017/10/19/android-%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F-OOM-%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    <id>http://lethisis.com/2017/10/19/android-内存泄漏-OOM-问题总结/</id>
     <published>2017-10-19T02:29:45.000Z</published>
     <updated>2017-10-19T02:35:10.000Z</updated>
     
@@ -226,19 +226,19 @@
     
     </summary>
     
-      <category term="android" scheme="http://www.lethisis.com/categories/android/"/>
+      <category term="android" scheme="http://lethisis.com/categories/android/"/>
     
     
-      <category term="Android" scheme="http://www.lethisis.com/tags/Android/"/>
+      <category term="Android" scheme="http://lethisis.com/tags/Android/"/>
     
-      <category term="OOM" scheme="http://www.lethisis.com/tags/OOM/"/>
+      <category term="OOM" scheme="http://lethisis.com/tags/OOM/"/>
     
   </entry>
   
   <entry>
     <title>Android N Signature Scheme v2 渠道打包</title>
-    <link href="http://www.lethisis.com/2017/10/19/Android-N-Signature-Scheme-v2-%E6%B8%A0%E9%81%93%E6%89%93%E5%8C%85/"/>
-    <id>http://www.lethisis.com/2017/10/19/Android-N-Signature-Scheme-v2-渠道打包/</id>
+    <link href="http://lethisis.com/2017/10/19/Android-N-Signature-Scheme-v2-%E6%B8%A0%E9%81%93%E6%89%93%E5%8C%85/"/>
+    <id>http://lethisis.com/2017/10/19/Android-N-Signature-Scheme-v2-渠道打包/</id>
     <published>2017-10-19T02:22:59.000Z</published>
     <updated>2017-10-19T02:28:38.000Z</updated>
     
@@ -257,21 +257,21 @@
     
     </summary>
     
-      <category term="android" scheme="http://www.lethisis.com/categories/android/"/>
+      <category term="android" scheme="http://lethisis.com/categories/android/"/>
     
     
-      <category term="打包" scheme="http://www.lethisis.com/tags/%E6%89%93%E5%8C%85/"/>
+      <category term="打包" scheme="http://lethisis.com/tags/%E6%89%93%E5%8C%85/"/>
     
-      <category term="Android" scheme="http://www.lethisis.com/tags/Android/"/>
+      <category term="Android" scheme="http://lethisis.com/tags/Android/"/>
     
-      <category term="android N" scheme="http://www.lethisis.com/tags/android-N/"/>
+      <category term="android N" scheme="http://lethisis.com/tags/android-N/"/>
     
   </entry>
   
   <entry>
     <title>setSpan 冲突问题</title>
-    <link href="http://www.lethisis.com/2017/10/16/setSpan-%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98/"/>
-    <id>http://www.lethisis.com/2017/10/16/setSpan-冲突问题/</id>
+    <link href="http://lethisis.com/2017/10/16/setSpan-%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98/"/>
+    <id>http://lethisis.com/2017/10/16/setSpan-冲突问题/</id>
     <published>2017-10-16T10:12:38.000Z</published>
     <updated>2017-10-18T08:35:39.000Z</updated>
     
@@ -285,12 +285,12 @@
     
     </summary>
     
-      <category term="android" scheme="http://www.lethisis.com/categories/android/"/>
+      <category term="android" scheme="http://lethisis.com/categories/android/"/>
     
     
-      <category term="Android" scheme="http://www.lethisis.com/tags/Android/"/>
+      <category term="Android" scheme="http://lethisis.com/tags/Android/"/>
     
-      <category term="span" scheme="http://www.lethisis.com/tags/span/"/>
+      <category term="span" scheme="http://lethisis.com/tags/span/"/>
     
   </entry>
   
