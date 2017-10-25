@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-128x128-cloud.ico?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-cloud.ico?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-cloud.ico?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/filter-drama.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Android,fitsSystemWindows,浸入式," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="小面包屑的博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="fitsSystemWindows 的定义 Boolean internal attribute to adjust view layout based on system windows such as the status bar. If true, adjusts the padding of this view to leave space for the system windows.">
+<meta name="keywords" content="Android,fitsSystemWindows,浸入式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="fitsSystemWindows理解">
+<meta property="og:url" content="http://lethisis.com/2017/10/25/fitsSystemWindows理解/index.html">
+<meta property="og:site_name" content="小面包屑的博客">
+<meta property="og:description" content="fitsSystemWindows 的定义 Boolean internal attribute to adjust view layout based on system windows such as the status bar. If true, adjusts the padding of this view to leave space for the system windows.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1760285-f5fcdb3639027eb2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-10-25T06:48:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="fitsSystemWindows理解">
+<meta name="twitter:description" content="fitsSystemWindows 的定义 Boolean internal attribute to adjust view layout based on system windows such as the status bar. If true, adjusts the padding of this view to leave space for the system windows.">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1760285-f5fcdb3639027eb2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://lethisis.com/2017/10/25/fitsSystemWindows理解/"/>
+
+
+
+
+
+  <title>fitsSystemWindows理解 | 小面包屑的博客</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?5de538caff6efe3edec863f94acd055a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小面包屑的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Code & Life</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lethisis.com/2017/10/25/fitsSystemWindows理解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小面包屑">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar_luwan.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小面包屑的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">fitsSystemWindows理解</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-25T14:45:12+08:00">
+                2017-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/10/25/fitsSystemWindows理解/" class="leancloud_visitors" data-flag-title="fitsSystemWindows理解">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="fitsSystemWindows-的定义"><a href="#fitsSystemWindows-的定义" class="headerlink" title="fitsSystemWindows 的定义"></a>fitsSystemWindows 的定义</h2><blockquote>
+<p>Boolean internal attribute to adjust view layout based on system windows such as the status bar. If true, adjusts the padding of this view to leave space for the system windows. Will only take effect if this view is in a non-embedded activity.</p>
+</blockquote>
+<p>这个一个boolean值的内部属性，让view可以根据系统窗口(如status bar)来调整自己的布局，如果值为true,就会调整view的paingding属性来给system windows留出空间。<strong>只有在非嵌入式的activity的view才有效果。</strong></p>
+<h2 id="fitsSystemWindows-的作用"><a href="#fitsSystemWindows-的作用" class="headerlink" title="fitsSystemWindows 的作用"></a>fitsSystemWindows 的作用</h2><blockquote>
+<p><a href="http://developer.android.com/reference/android/view/View.html#attr_android:fitsSystemWindows" target="_blank" rel="external"><strong>android:fitsSystemWindows</strong></a><strong>=”true”</strong> attribute gives you: it sets the padding of the View to ensure the contents don’t overlay the system windows.</p>
+</blockquote>
+<p>设置View的padding，确定content不会与system windows重叠。<br><a id="more"></a></p>
+<blockquote>
+<p>A few things to keep in mind: </p>
+<ul>
+<li>fitsSystemWindows is applied depth first <em> — ordering matters: it’s the first View that consumes the insets that makes a difference<br><strong>Insets are always relative to the full window</strong> — insets may be applied even before layout happens, so don’t assume the default behavior knows anything about the position of a View when applying its padding<br><em>*Any other padding you’ve set is overwritten</em></em> — you’ll note that paddingLeft /paddingTop /etc is ineffective if you are using android:fitsSystemWindows=”true” on the same View</li>
+</ul>
+</blockquote>
+<p>有几点是需要注意的： </p>
+<ul>
+<li>属性需要在root view设置，只有root view消费insets才会生效。</li>
+<li>insets 是相对于全屏幕的。insets（边框）可能在 layout 之前（view生产之前）就已经设置， 所以insets的padding值，绝不会是相对于view的位置，而是相对于全屏幕。</li>
+<li>任何你设置的padding都会被覆盖。 在同一个view上面设置了 android:fitsSystemWindows=”true”  的同时，还设置了 paddingLeft  paddingTop 等等，后者不会生效。 </li>
+</ul>
+<blockquote>
+<p>如果想让RecycleView的内容滚动到状态栏之下, 可以同时设置android:fitsSystemWindows=”true”和android:clipToPadding=”false”, 这样在布局初始化的时候,内容不会在状态栏之下, 滚动的时候, 内容可以滚到状态栏之下;<br>::android:clipToPadding=”false”的作用是是让padding的位置也可以用来绘制, clipToPadding默认是true::</p>
+</blockquote>
+<h2 id="自定义fitsSystemWindows"><a href="#自定义fitsSystemWindows" class="headerlink" title="自定义fitsSystemWindows"></a>自定义fitsSystemWindows</h2><blockquote>
+<p>On <a href="http://developer.android.com/about/versions/kitkat.html" target="_blank" rel="external">KitKat</a> and below, your custom View could override <a href="http://developer.android.com/reference/android/view/View.html#fitSystemWindows%28android.graphics.Rect%29" target="_blank" rel="external">fitSystemWindows()</a><br> and provide any functionality you wanted — just return true<br> if you’ve consumed the insets or false if you’d like to give other Views a chance.</p>
+</blockquote>
+<p>在KitKat(4.4)或者4.4以下的版本，在自定义view中重写<code>fitSystemWindows()</code>方法，如果要消费insets则返回true , 返回false则让其他view去消费。</p>
+<blockquote>
+<p>on <a href="http://developer.android.com/about/versions/lollipop.html" target="_blank" rel="external">Lollipop</a> and higher devices, we provide some new APIs to make customizing this behavior much easier and consistent with other behaviors for Views. You’ll instead override <a href="http://developer.android.com/reference/android/view/View.html#onApplyWindowInsets%28android.view.WindowInsets%29" target="_blank" rel="external">onApplyWindowInsets()</a>, which allows the View to consume as much or as little of the insets as you need and be able to call <a href="http://developer.android.com/reference/android/view/View.html#dispatchApplyWindowInsets%28android.view.WindowInsets%29" target="_blank" rel="external">dispatchApplyWindowInsets()</a> on child views as needed.</p>
+</blockquote>
+<p>Lollipop(5.0) 或者 5.0以上版本， 提供了新的API ,只要重写<code>onApplyWindowInsets()</code>，就能允许自定义view去消费任何大小的insets ，并且能调用<code>dispatchApplyWindowInsets()</code> 让子view接着消费insets。</p>
+<blockquote>
+<p><strong>you don’t even need to subclass your Views if you only need custom behavior on Lollipop and higher </strong>—<strong> </strong>you can use <a href="http://developer.android.com/reference/android/support/v4/view/ViewCompat.html#setOnApplyWindowInsetsListener%28android.view.View,%20android.support.v4.view.OnApplyWindowInsetsListener%29" target="_blank" rel="external">ViewCompat.setOnApplyWindowInsetsListener()</a>, which will be given preference over the View’s onApplyWindowInsets(). <a href="http://developer.android.com/reference/android/support/v4/view/ViewCompat.html" target="_blank" rel="external">ViewCompat</a> also provides helper methods for calling <a href="http://developer.android.com/reference/android/support/v4/view/ViewCompat.html#onApplyWindowInsets%28android.view.View,%20android.support.v4.view.WindowInsetsCompat%29" target="_blank" rel="external">onApplyWindowInsets(</a><a href="http://developer.android.com/reference/android/support/v4/view/ViewCompat.html#onApplyWindowInsets%28android.view.View,%20android.support.v4.view.WindowInsetsCompat%29" target="_blank" rel="external"><em>)</em></a> and <a href="http://developer.android.com/reference/android/support/v4/view/ViewCompat.html#dispatchApplyWindowInsets%28android.view.View,%20android.support.v4.view.WindowInsetsCompat%29" target="_blank" rel="external">dispatchApplyWindowInsets()</a> without version checking.</p>
+</blockquote>
+<p>在Lollipop(5.0)或者5.0以上的版本，如果不想继承view的话，可以使用<code>ViewCompat.setOnApplyWindowInsetsListener()</code> ,  这个方法优先于<code>View.onApplyWindowInsets()</code>执行。<br>ViewCompat  同时也提供了 <code>onApplyWindowInsets()</code> <code>dispatchApplyWindowInsets()</code> ,解决了兼容性的问题。</p>
+<h3 id="fitsSystemWindows-源码"><a href="#fitsSystemWindows-源码" class="headerlink" title="fitsSystemWindows 源码"></a>fitsSystemWindows 源码</h3><p> 根据<code>FITS_SYSTEM_WINDOWS</code>标志位，无论哪个版本，默认都是直接设置padding</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">boolean</span> <span class="title">fitSystemWindows</span><span class="params">(Rect insets)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> ((mPrivateFlags3 &amp; PFLAG3_APPLYING_INSETS) == <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">if</span> (insets == <span class="keyword">null</span>) &#123;</div><div class="line">                <span class="comment">// Null insets by definition have already been consumed.</span></div><div class="line">                <span class="comment">// This call cannot apply insets since there are none to apply,</span></div><div class="line">                <span class="comment">// so return false.</span></div><div class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="comment">// If we're not in the process of dispatching the newer apply insets call,</span></div><div class="line">            <span class="comment">// that means we're not in the compatibility path. Dispatch into the newer</span></div><div class="line">            <span class="comment">// apply insets path and take things from there.</span></div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                mPrivateFlags3 |= PFLAG3_FITTING_SYSTEM_WINDOWS;</div><div class="line">                <span class="keyword">return</span> dispatchApplyWindowInsets(<span class="keyword">new</span> WindowInsets(insets)).isConsumed();</div><div class="line">            &#125; <span class="keyword">finally</span> &#123;</div><div class="line">                mPrivateFlags3 &amp;= ~PFLAG3_FITTING_SYSTEM_WINDOWS;</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="comment">// We're being called from the newer apply insets path.</span></div><div class="line">            <span class="comment">// Perform the standard fallback behavior.</span></div><div class="line">            <span class="keyword">return</span> fitSystemWindowsInt(insets);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">fitSystemWindowsInt</span><span class="params">(Rect insets)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> ((mViewFlags &amp; FITS_SYSTEM_WINDOWS) == FITS_SYSTEM_WINDOWS) &#123;</div><div class="line">            mUserPaddingStart = UNDEFINED_PADDING;</div><div class="line">            mUserPaddingEnd = UNDEFINED_PADDING;</div><div class="line">            Rect localInsets = sThreadLocal.get();</div><div class="line">            <span class="keyword">if</span> (localInsets == <span class="keyword">null</span>) &#123;</div><div class="line">                localInsets = <span class="keyword">new</span> Rect();</div><div class="line">                sThreadLocal.set(localInsets);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">boolean</span> res = computeFitSystemWindows(insets, localInsets);</div><div class="line">            mUserPaddingLeftInitial = localInsets.left;</div><div class="line">            mUserPaddingRightInitial = localInsets.right;</div><div class="line">            internalSetPadding(localInsets.left, localInsets.top,</div><div class="line">                    localInsets.right, localInsets.bottom);</div><div class="line">            <span class="keyword">return</span> res;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> WindowInsets <span class="title">onApplyWindowInsets</span><span class="params">(WindowInsets insets)</span> </span>&#123;</div><div class="line">      <span class="keyword">if</span> ((mPrivateFlags3 &amp; PFLAG3_FITTING_SYSTEM_WINDOWS) == <span class="number">0</span>) &#123;</div><div class="line">          <span class="comment">// We weren't called from within a direct call to fitSystemWindows,</span></div><div class="line">          <span class="comment">// call into it as a fallback in case we're in a class that overrides it</span></div><div class="line">          <span class="comment">// and has logic to perform.</span></div><div class="line">          <span class="keyword">if</span> (fitSystemWindows(insets.getSystemWindowInsets())) &#123;</div><div class="line">              <span class="keyword">return</span> insets.consumeSystemWindowInsets();</div><div class="line">          &#125;</div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">          <span class="comment">// We were called from within a direct call to fitSystemWindows.</span></div><div class="line">          <span class="keyword">if</span> (fitSystemWindowsInt(insets.getSystemWindowInsets())) &#123;</div><div class="line">              <span class="keyword">return</span> insets.consumeSystemWindowInsets();</div><div class="line">          &#125;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">return</span> insets;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<h2 id="fitsSystemWindows实例"><a href="#fitsSystemWindows实例" class="headerlink" title="fitsSystemWindows实例"></a>fitsSystemWindows实例</h2><blockquote>
+<p>系统的基本控件（(FrameLayout, LinearLayout, 等）都使用默认的行为，Support 包中有些控件使用了自定义行为。<br>一个使用自定义行为的示例就是<a href="http://www.google.com/design/spec/patterns/navigation-drawer.html" target="_blank" rel="external">侧边栏</a>，侧边栏打开的时候，内容是占满整个屏幕高度的，状态栏显示为透明的，下面是 侧边栏的内容。<br><img src="http://upload-images.jianshu.io/upload_images/1760285-f5fcdb3639027eb2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>这里 <a href="http://developer.android.com/reference/android/support/v4/widget/DrawerLayout.html" target="_blank" rel="external">DrawerLayout</a> 使用 fitsSystemWindows 来表明需要处理 insets，但是仍然使用状态栏的颜色来绘制状态栏背景（状态栏颜色为 主题的 colorPrimaryDark 所设置的颜色）。<br>然后 DrawerLayout 在每个子 View 上调用 dispatchApplyWindowInsets() 函数，这样 子 View 也有 机会处理 insets，这和系统默认行为是不一样的（系统默认行为只是吃掉这个 insets，然后子 View 无法继续处理）。<br><a href="http://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.html" target="_blank" rel="external">CoordinatorLayout</a> 对此也做了特殊处理，让每个子 View 的 <a href="http://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.Behavior.html" target="_blank" rel="external">Behavior</a> 可以根据系统窗口的大小来做不同的处理。 还使用 fitsSystemWindows 属性来判断是否需要绘制状态栏背景。<br>通用 <a href="http://developer.android.com/reference/android/support/design/widget/CollapsingToolbarLayout.html" target="_blank" rel="external">CollapsingToolbarLayout</a> 也根据 fitsSystemWindows 属性来确定何时何地绘制 内容上方的半透明背景。<br>在 <a href="https://github.com/chrisbanes/cheesesquare" target="_blank" rel="external">cheesesquare</a> 示例项目中演示了这些 fitsSystemWindows 使用场景，可以下载该示例项目查看如何使用的。</p>
+</blockquote>
+<p>也可以参考这个项目：</p>
+<blockquote>
+<p> <a href="https://github.com/Jude95/FitSystemWindowLayout" target="_blank" rel="external">https://github.com/Jude95/FitSystemWindowLayout</a></p>
+<p>参考：<br><a href="https://stackoverflow.com/questions/3355367/height-of-statusbar" target="_blank" rel="external">https://stackoverflow.com/questions/3355367/height-of-statusbar</a><br><a href="http://blog.chengyunfeng.com/?p=905" target="_blank" rel="external">http://blog.chengyunfeng.com/?p=905</a><br><a href="https://stackoverflow.com/questions/28387289/fitsystemwindows-programmatically-for-status-bar-transparency" target="_blank" rel="external">https://stackoverflow.com/questions/28387289/fitsystemwindows-programmatically-for-status-bar-transparency</a><br><a href="http://www.jianshu.com/p/f3683e27fd94" target="_blank" rel="external">http://www.jianshu.com/p/f3683e27fd94</a><br><a href="https://developer.android.com/reference/android/support/design/widget/AppBarLayout.html" target="_blank" rel="external">https://developer.android.com/reference/android/support/design/widget/AppBarLayout.html</a><br><a href="https://medium.com/google-developers/why-would-i-want-to-fitssystemwindows-4e26d9ce1eec?linkId=19685562" target="_blank" rel="external">https://medium.com/google-developers/why-would-i-want-to-fitssystemwindows-4e26d9ce1eec?linkId=19685562</a><br><a href="https://github.com/hehonghui/android-tech-frontier/blob/master/issue-35/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BB%AC%E8%A6%81%E7%94%A8fitsSystemWindows.md" target="_blank" rel="external">https://github.com/hehonghui/android-tech-frontier/blob/master/issue-35/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BB%AC%E8%A6%81%E7%94%A8fitsSystemWindows.md</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+    <div>
+      
+        
+<div style="text-align:center;color: #ccc;font-size:14px;">
+------ 本文结束 感谢阅读------</div>
+<br/>
+<div>   
+  <ul class="post-copyright" style="border-left:3px solid #ff1700;list-style:none;margin:2em 0 0;padding:0.5em 1em;background-color:#f9f9f9">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      小面包屑
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://lethisis.com/2017/10/25/fitsSystemWindows理解/" title="fitsSystemWindows理解">http://lethisis.com/2017/10/25/fitsSystemWindows理解/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>声明： </strong>
+      原创文章，有问题请评论中留言。支持友情链接。非商业转载请注明作者及出处。商业转载请联系作者本人。
+    </li>
+  </ul>
+</div>
+
+      
+    </div>
+
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/qrcode_for_gh_857b9a059fb9_258.jpg" alt="小面包屑 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的公众号！</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+            <a href="/tags/fitsSystemWindows/" rel="tag"># fitsSystemWindows</a>
+          
+            <a href="/tags/浸入式/" rel="tag"># 浸入式</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/19/自定义view富文本RichText/" rel="next" title="自定义view富文本RichText">
+                <i class="fa fa-chevron-left"></i> 自定义view富文本RichText
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="SOHUCS"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar_luwan.jpeg"
+                alt="小面包屑" />
+            
+              <p class="site-author-name" itemprop="name">小面包屑</p>
+              <p class="site-description motion-element" itemprop="description">就喜欢这样记录一下</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/extramoney" target="_blank" title="GitHub" rel="external nofollow">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://www.jianshu.com/u/7828c04ec9ca" target="_blank" title="简书" rel="external nofollow">
+                    
+                      <i class="fa fa-fw fa-link"></i>简书</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#fitsSystemWindows-的定义"><span class="nav-number">1.</span> <span class="nav-text">fitsSystemWindows 的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fitsSystemWindows-的作用"><span class="nav-number">2.</span> <span class="nav-text">fitsSystemWindows 的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义fitsSystemWindows"><span class="nav-number">3.</span> <span class="nav-text">自定义fitsSystemWindows</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#fitsSystemWindows-源码"><span class="nav-number">3.1.</span> <span class="nav-text">fitsSystemWindows 源码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fitsSystemWindows实例"><span class="nav-number">4.</span> <span class="nav-text">fitsSystemWindows实例</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小面包屑</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">NexT.Mist</a> v5.1.3
+
+<span class="post-meta-divider">|</span>
+</div>
+
+
+<div class="theme-info">
+Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+</div>
+
+
+
+
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("cMR2jxHtdxqiJIqjoizePELm-gzGzoHsz", "nXoySFNtF4zR5aibCOQgTgGW");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
