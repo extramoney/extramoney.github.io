@@ -95,7 +95,7 @@
 
 
 
-  <meta name="keywords" content="弱引用,java," />
+  <meta name="keywords" content="Android,推送," />
 
 
 
@@ -108,21 +108,18 @@
 
 
 
-<meta name="description" content="1compile &amp;apos;com.anthonycr.grant:permissions:1.1.2&amp;apos; 版本更新后，作者为了避免内存泄漏，在源码中添加了一个弱引用来存储一个抽象类。 但在用户有多个权限需要选择的时候，抽象类有时候会被回收。当用户确认权限之后，没有调用到回调函数。 android内存空间分配 首先, 让我们快速看下Android启动流程. 与众多基于Linux内核的系统">
-<meta name="keywords" content="弱引用,java">
+<meta name="description" content="Android 5.0对状态栏图标的要求根据Android5.0相关API，icon必须完全遵循镂空背景和无渐变色的设计。 极光推送通知栏图标问题使用默认通知栏样式的话，如果找不到 jpush_notification_icon.png ,则使用应用的默认图标。1234JPushInterface.setDebugMode(true); 	// 设置开启日志,发布时请关闭日志 JPushInter">
+<meta name="keywords" content="Android,推送">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WeakReference 弱引用与内存泄漏">
-<meta property="og:url" content="http://lethisis.com/2017/10/19/WeakReference-弱引用与内存泄漏/index.html">
+<meta property="og:title" content="JPUSH(极光) 推送通知栏图标">
+<meta property="og:url" content="http://lethisis.com/archives/7ff5eb52.html">
 <meta property="og:site_name" content="小面包屑的博客">
-<meta property="og:description" content="1compile &amp;apos;com.anthonycr.grant:permissions:1.1.2&amp;apos; 版本更新后，作者为了避免内存泄漏，在源码中添加了一个弱引用来存储一个抽象类。 但在用户有多个权限需要选择的时候，抽象类有时候会被回收。当用户确认权限之后，没有调用到回调函数。 android内存空间分配 首先, 让我们快速看下Android启动流程. 与众多基于Linux内核的系统">
+<meta property="og:description" content="Android 5.0对状态栏图标的要求根据Android5.0相关API，icon必须完全遵循镂空背景和无渐变色的设计。 极光推送通知栏图标问题使用默认通知栏样式的话，如果找不到 jpush_notification_icon.png ,则使用应用的默认图标。1234JPushInterface.setDebugMode(true); 	// 设置开启日志,发布时请关闭日志 JPushInter">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1760285-29c0ee6ae9953466.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1760285-f18af8448ad77696.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-10-19T02:50:38.000Z">
+<meta property="og:updated_time" content="2017-10-31T02:20:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WeakReference 弱引用与内存泄漏">
-<meta name="twitter:description" content="1compile &amp;apos;com.anthonycr.grant:permissions:1.1.2&amp;apos; 版本更新后，作者为了避免内存泄漏，在源码中添加了一个弱引用来存储一个抽象类。 但在用户有多个权限需要选择的时候，抽象类有时候会被回收。当用户确认权限之后，没有调用到回调函数。 android内存空间分配 首先, 让我们快速看下Android启动流程. 与众多基于Linux内核的系统">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1760285-29c0ee6ae9953466.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="JPUSH(极光) 推送通知栏图标">
+<meta name="twitter:description" content="Android 5.0对状态栏图标的要求根据Android5.0相关API，icon必须完全遵循镂空背景和无渐变色的设计。 极光推送通知栏图标问题使用默认通知栏样式的话，如果找不到 jpush_notification_icon.png ,则使用应用的默认图标。1234JPushInterface.setDebugMode(true); 	// 设置开启日志,发布时请关闭日志 JPushInter">
 
 
 
@@ -152,13 +149,13 @@
 
 
 
-  <link rel="canonical" href="http://lethisis.com/2017/10/19/WeakReference-弱引用与内存泄漏/"/>
+  <link rel="canonical" href="http://lethisis.com/archives/7ff5eb52.html"/>
 
 
 
 
 
-  <title>WeakReference 弱引用与内存泄漏 | 小面包屑的博客</title>
+  <title>JPUSH(极光) 推送通知栏图标 | 小面包屑的博客</title>
   
 
 
@@ -305,7 +302,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lethisis.com/2017/10/19/WeakReference-弱引用与内存泄漏/">
+    <link itemprop="mainEntityOfPage" href="http://lethisis.com/archives/7ff5eb52.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小面包屑">
@@ -322,7 +319,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">WeakReference 弱引用与内存泄漏</h1>
+          <h1 class="post-title" itemprop="name headline">JPUSH(极光) 推送通知栏图标</h1>
         
 
         <div class="post-meta">
@@ -334,7 +331,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-19T10:49:07+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-19T10:42:35+08:00">
                 2017-10-19
               </time>
             
@@ -357,8 +354,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
                   </a>
                 </span>
 
@@ -374,7 +371,7 @@
 
           
           
-             <span id="/2017/10/19/WeakReference-弱引用与内存泄漏/" class="leancloud_visitors" data-flag-title="WeakReference 弱引用与内存泄漏">
+             <span id="/archives/7ff5eb52.html" class="leancloud_visitors" data-flag-title="JPUSH(极光) 推送通知栏图标">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -405,39 +402,19 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile &apos;com.anthonycr.grant:permissions:1.1.2&apos;</div></pre></td></tr></table></figure>
-<p>版本更新后，作者为了避免内存泄漏，在源码中添加了一个弱引用来存储一个抽象类。</p>
-<p>但在用户有多个权限需要选择的时候，抽象类有时候会被回收。当用户确认权限之后，没有调用到回调函数。</p>
-<h1 id="android内存空间分配"><a href="#android内存空间分配" class="headerlink" title="android内存空间分配"></a>android内存空间分配</h1><blockquote>
-<p>首先, 让我们快速看下Android启动流程. 与众多基于Linux内核的系统类似, 启动系统时, bootloader启动内核和init进程. init进程分裂出更多名为”daemons(守护进程)”的底层的Linux进程, 诸如android debug deamon, USB deamon等. 这些守护进程处理底层硬件相关的接口.</p>
-<p>随后, init进程会启动一个非常有意思的进程—“Zygote”. 顾名思义, 这是一个Android平台的非常基础的进程. 这个进程初始化了第一个VM, 并且预加载了framework和众多App所需要的通用资源. 然后它开启一个Socket接口来监听请求, 根据请求孵化出新的VM来管理新的App进程. 一旦收到新的请求, Zygote会基于自身预先加载的VM来孵化出一个新的VM创建一个新的进程.</p>
-<p>启动Zygote之后, init进程会启动runtime进程. Zygote会孵化出一个超级管理进程—System Server. SystemServer会启动所有系统核心服务, 例如Activity Manager Service, 硬件相关的Service等. 到此, 系统准备好启动它的第一个App进程—Home进程了.</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1760285-29c0ee6ae9953466.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="app launch"></p>
+        <h1 id="Android-5-0对状态栏图标的要求"><a href="#Android-5-0对状态栏图标的要求" class="headerlink" title="Android 5.0对状态栏图标的要求"></a>Android 5.0对状态栏图标的要求</h1><p>根据Android5.0相关API，icon必须完全遵循镂空背景和无渐变色的设计。</p>
+<h1 id="极光推送通知栏图标问题"><a href="#极光推送通知栏图标问题" class="headerlink" title="极光推送通知栏图标问题"></a>极光推送通知栏图标问题</h1><p>使用默认通知栏样式的话，如果找不到 <b>jpush_notification_icon.png</b> ,则使用应用的默认图标。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">JPushInterface.setDebugMode(<span class="keyword">true</span>); 	</div><div class="line"><span class="comment">// 设置开启日志,发布时请关闭日志 </span></div><div class="line">JPushInterface.init(<span class="keyword">this</span>); 		</div><div class="line"><span class="comment">// 初始化 JPush</span></div></pre></td></tr></table></figure></p>
+<p>在使用期间会出现状态栏图标显示不全的问题</p>
 <blockquote>
-<p>当启动一个Android程序时，会启动一个Dalvik VM进程，系统会给它分配固定的内存空间（16M,32M不定），这块内存空间会映射到RAM上某个区域。然后这个Android程序就会运行在这块空间上。Java里会将这块空间分成Stack栈内存和Heap堆内存。stack里存放对象的引用，heap里存放实际对象数据。<br>在程序运行中会创建对象，如果未合理管理内存，比如不及时回收无效空间就会造成内存泄露，严重的话可能导致使用内存超过系统分配内存，即内存溢出OOM，导致程序卡顿甚至直接退出。</p>
+<p>参考：<br><a href="https://community.jiguang.cn/t/logo/10361/4" target="_blank" rel="external">https://community.jiguang.cn/t/logo/10361/4</a><br><a href="http://9105034.blog.51cto.com/9095034/1742957" target="_blank" rel="external">http://9105034.blog.51cto.com/9095034/1742957</a></p>
+<p>通知的图标大小<br>drawable-xhdpi 48x48<br>drawable-hdpi 36x36<br>drawable-mdpi 24x24</p>
 </blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1760285-f18af8448ad77696.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="dalvik的Heap和Stack"></p>
-<p>也就是带有回调函数的对象会放到内存堆中。当然，一般处理内存泄漏都是处理内存堆，这里只是提一下。</p>
 <a id="more"></a>
-<h1 id="弱引用"><a href="#弱引用" class="headerlink" title="弱引用"></a>弱引用</h1><blockquote>
-<p>在Java里, 当一个对象o被创建时, 它被放在Heap里. 当GC运行的时候, 如果发现没有任何引用指向o, o就会被回收以腾出内存空间. 或者换句话说, 一个对象被回收, 必须满足两个条件: 1)没有任何引用指向它 2)GC被运行</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">addPendingAction</span><span class="params">(@NonNull String[] permissions,</span></span></div><div class="line"><span class="function"><span class="params">                                            @Nullable PermissionsResultAction action)</span> </span>&#123;</div><div class="line">     <span class="keyword">if</span> (action == <span class="keyword">null</span>) &#123;</div><div class="line">         <span class="keyword">return</span>;</div><div class="line">     &#125;</div><div class="line">     action.registerPermissions(permissions);</div><div class="line">     mPendingActions.add(<span class="keyword">new</span> WeakReference&lt;&gt;(action));</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">notifyPermissionsChange</span><span class="params">(@NonNull String[] permissions, @NonNull <span class="keyword">int</span>[] results)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> size = permissions.length;</div><div class="line">    <span class="keyword">if</span> (results.length &lt; size) &#123;</div><div class="line">        size = results.length;</div><div class="line">    &#125;</div><div class="line">    Iterator&lt;WeakReference&lt;PermissionsResultAction&gt;&gt; iterator = mPendingActions.iterator();</div><div class="line">    <span class="keyword">while</span> (iterator.hasNext()) &#123;</div><div class="line">        PermissionsResultAction action = iterator.next().get();</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> n = <span class="number">0</span>; n &lt; size; n++) &#123;</div><div class="line">            <span class="keyword">if</span> (action == <span class="keyword">null</span> || action.onResult(permissions[n], results[n])) &#123;</div><div class="line">                iterator.remove();</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> n = <span class="number">0</span>; n &lt; size; n++) &#123;</div><div class="line">        mPendingRequests.remove(permissions[n]);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>在源码中执行到这儿的时候，action有时候变成了null 。</p>
-<p>在addPendingAction操作中有PermissionsResultAction（强引用）引用指向，但到notifyPermissionsChange（）的时候PermissionsResultAction依然被系统回收了，回调函数不被执行。</p>
-<p> 这是因为编译器在发现进入while循环之后, PermissionsResultAction已经没有被使用, 所以进行了优化(将其置空).</p>
-<p>写了一段测试代码，对象最后的确被回收了。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line"></div><div class="line">      List&lt;WeakReference&lt;PermissionAction&gt;&gt; mPendingActions = <span class="keyword">new</span> ArrayList&lt;&gt;(<span class="number">1</span>);</div><div class="line"></div><div class="line"></div><div class="line">      mPendingActions.add(<span class="keyword">new</span> WeakReference&lt;&gt;(<span class="keyword">new</span> PermissionAction()));</div><div class="line"></div><div class="line"></div><div class="line">      <span class="keyword">int</span> i = <span class="number">0</span>;</div><div class="line">      WeakReference&lt;PermissionAction&gt; actionPermission = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">      Iterator&lt;WeakReference&lt;PermissionAction&gt;&gt; iterator = mPendingActions.iterator();</div><div class="line"></div><div class="line">      <span class="keyword">if</span>(iterator.hasNext())&#123;</div><div class="line">          actionPermission = iterator.next();</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</div><div class="line">          PermissionAction action = actionPermission.get();</div><div class="line"></div><div class="line">          <span class="keyword">if</span> (action != <span class="keyword">null</span>) &#123;</div><div class="line">              i++;</div><div class="line">              System.out.println(<span class="string">"Object is alive for "</span> + i + <span class="string">" loops - "</span> + action);</div><div class="line">          &#125; <span class="keyword">else</span> &#123;</div><div class="line">              System.out.println(<span class="string">"Object has been collected."</span>);</div><div class="line">              <span class="keyword">break</span>;</div><div class="line">          &#125;</div><div class="line"></div><div class="line">      &#125;</div><div class="line"></div><div class="line">  &#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>WeakReference的一个特点是它何时被回收是不可确定的, 因为这是由GC运行的不确定性所确定的. 所以, 一般用weak reference引用的对象是有价值被cache, 而且很容易被重新被构建, 且很消耗内存的对象.</li>
-</ul>
-</blockquote>
-<p>虽然弱引用能让app避免了内存溢出的问题，但也带来了不确定性。</p>
-<p>弱引用可以用于Handler，一般的Handler写法可能会导致内存泄漏。因为非静态的内部类持有外部类的对象，而handler又会由于msg的处理而可能常驻在进程中，在activity或者service destroy后，不能及时被系统回收，导致内存泄漏。<br>建议写法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">OuterHandler</span> <span class="keyword">extends</span> <span class="title">Handler</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">final</span> WeakReference&lt;MainActivity&gt; mActivity;</div><div class="line">         </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">OuterHandler</span><span class="params">(MainActivity activity)</span> </span>&#123;</div><div class="line">      mActivity = <span class="keyword">new</span> WeakReference&lt;MainActivity&gt;(activity);</div><div class="line">    &#125;</div><div class="line">         </div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleMessage</span><span class="params">(Message msg)</span> </span>&#123;</div><div class="line">      MainActivity activity = mActivity.get();</div><div class="line">      <span class="keyword">if</span> (activity != <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="comment">// do something...</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<h1 id="自定义通知栏样式设计"><a href="#自定义通知栏样式设计" class="headerlink" title="自定义通知栏样式设计"></a>自定义通知栏样式设计</h1><h2 id="1-、定制声音、震动、闪灯等-Notification-样式。"><a href="#1-、定制声音、震动、闪灯等-Notification-样式。" class="headerlink" title="1 、定制声音、震动、闪灯等 Notification 样式。"></a>1 、定制声音、震动、闪灯等 Notification 样式。</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">BasicPushNotificationBuilder builder = <span class="keyword">new</span> BasicPushNotificationBuilder(MainActivity.<span class="keyword">this</span>);</div><div class="line">builder.statusBarDrawable = R.drawable.jpush_notification_icon;</div><div class="line">builder.notificationFlags = Notification.FLAG_AUTO_CANCEL</div><div class="line">        | Notification.FLAG_SHOW_LIGHTS;  <span class="comment">//设置为自动消失和呼吸灯闪烁</span></div><div class="line">builder.notificationDefaults = Notification.DEFAULT_SOUND</div><div class="line">        | Notification.DEFAULT_VIBRATE</div><div class="line">        | Notification.DEFAULT_LIGHTS;  <span class="comment">// 设置为铃声、震动、呼吸灯闪烁都要</span></div><div class="line">JPushInterface.setPushNotificationBuilder(<span class="number">1</span>, builder);</div></pre></td></tr></table></figure>
+<h2 id="2、定制-Notification-的-Layout"><a href="#2、定制-Notification-的-Layout" class="headerlink" title="2、定制 Notification 的 Layout"></a>2、定制 Notification 的 Layout</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">CustomPushNotificationBuilder builder = <span class="keyword">new</span></div><div class="line">CustomPushNotificationBuilder(MainActivity.<span class="keyword">this</span>,</div><div class="line">                          R.layout.customer_notitfication_layout,</div><div class="line">                          R.id.icon,</div><div class="line">                          R.id.title,</div><div class="line">                          R.id.text); </div><div class="line">                         <span class="comment">// 指定定制的 Notification Layout</span></div><div class="line">builder.statusBarDrawable = R.drawable.your_notification_icon;     </div><div class="line"><span class="comment">// 指定最顶层状态栏小图标</span></div><div class="line">builder.layoutIconDrawable = R.drawable.your_2_notification_icon;  </div><div class="line"><span class="comment">// 指定下拉状态栏时显示的通知图标</span></div><div class="line">JPushInterface.setPushNotificationBuilder(<span class="number">2</span>, builder);</div></pre></td></tr></table></figure>
+<p>使用自定义通知栏样式的有条件的<br>客户端需设置消息的类型，即builderId ，当服务端发送对应的类型时，极光会先进行消息类型匹配，若匹配不上，则默认调用应用的图标，若匹配上，则调用客户端指定的图标（自定义通知栏的指定图标）。</p>
+<p>现在服务端为极光后台，无法设置builderId，因此app无法自定义状态栏，无法自定义状态栏的图标以及下拉状态栏的图标。</p>
+
       
     </div>
     
@@ -457,7 +434,7 @@
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://lethisis.com/2017/10/19/WeakReference-弱引用与内存泄漏/" title="WeakReference 弱引用与内存泄漏">http://lethisis.com/2017/10/19/WeakReference-弱引用与内存泄漏/</a>
+      <a href="http://lethisis.com/archives/7ff5eb52.html" title="JPUSH(极光) 推送通知栏图标">http://lethisis.com/archives/7ff5eb52.html</a>
     </li>
     <li class="post-copyright-license">
       <strong>声明： </strong>
@@ -488,9 +465,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/弱引用/" rel="tag"># 弱引用</a>
+            <a href="/tags/Android/" rel="tag"># Android</a>
           
-            <a href="/tags/java/" rel="tag"># java</a>
+            <a href="/tags/推送/" rel="tag"># 推送</a>
           
         </div>
       
@@ -503,8 +480,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/19/React学习（一）/" rel="next" title="React学习（一）">
-                <i class="fa fa-chevron-left"></i> React学习（一）
+              <a href="/archives/4ea27d37.html" rel="next" title="ViewDragHelper理解">
+                <i class="fa fa-chevron-left"></i> ViewDragHelper理解
               </a>
             
           </div>
@@ -513,8 +490,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/19/android蓝牙了解/" rel="prev" title="android蓝牙了解">
-                android蓝牙了解 <i class="fa fa-chevron-right"></i>
+              <a href="/archives/34039b4c.html" rel="prev" title="React学习（一）">
+                React学习（一） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -679,7 +656,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#android内存空间分配"><span class="nav-number">1.</span> <span class="nav-text">android内存空间分配</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#弱引用"><span class="nav-number">2.</span> <span class="nav-text">弱引用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Android-5-0对状态栏图标的要求"><span class="nav-number">1.</span> <span class="nav-text">Android 5.0对状态栏图标的要求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#极光推送通知栏图标问题"><span class="nav-number">2.</span> <span class="nav-text">极光推送通知栏图标问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自定义通知栏样式设计"><span class="nav-number">3.</span> <span class="nav-text">自定义通知栏样式设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-、定制声音、震动、闪灯等-Notification-样式。"><span class="nav-number">3.1.</span> <span class="nav-text">1 、定制声音、震动、闪灯等 Notification 样式。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、定制-Notification-的-Layout"><span class="nav-number">3.2.</span> <span class="nav-text">2、定制 Notification 的 Layout</span></a></li></ol></li></ol></div>
             
 
           </div>
