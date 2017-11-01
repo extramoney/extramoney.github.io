@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://lethisis.com/archives/adc6ee37.html</loc>
-    <lastmod>2017-11-01T09:21:48.000Z</lastmod>
+    <lastmod>2017-11-01T09:29:53.000Z</lastmod>
     <data>
         <display>
         <title>Laravel 环境安装 Mac</title>
@@ -186,6 +186,28 @@
 
     
   <url>
+    <loc>http://lethisis.com/archives/a0ce5bca.html</loc>
+    <lastmod>2017-10-31T02:20:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>自定义view富文本RichText</title>
+        <pubTime>2017-10-19T05:35:39.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>view</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://lethisis.com/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://lethisis.com/archives/7e6ef032.html</loc>
     <lastmod>2017-10-31T02:20:17.000Z</lastmod>
     <data>
@@ -244,28 +266,6 @@
         <tag>Android</tag>
          
         <tag>span</tag>
-         
-         
-           
-             
-              <breadCrumb title="android" url="http://lethisis.com/categories/android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://lethisis.com/archives/a0ce5bca.html</loc>
-    <lastmod>2017-10-31T02:20:17.000Z</lastmod>
-    <data>
-        <display>
-        <title>自定义view富文本RichText</title>
-        <pubTime>2017-10-19T05:35:39.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>view</tag>
          
          
            
