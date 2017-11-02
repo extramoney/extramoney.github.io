@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://lethisis.com/archives/12191df9.html</loc>
+    <lastmod>2017-11-02T08:26:05.000Z</lastmod>
+    <data>
+        <display>
+        <title>Kotlin 学习笔记</title>
+        <pubTime>2017-11-02T08:20:22.000Z</pubTime>
+        
+        <tag>学习</tag>
+         
+        <tag>kotlin</tag>
+         
+        <tag>持续更新</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://lethisis.com/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://lethisis.com/archives/adc6ee37.html</loc>
     <lastmod>2017-11-01T09:31:24.000Z</lastmod>
     <data>
@@ -28,18 +52,18 @@
 
     
   <url>
-    <loc>http://lethisis.com/archives/7e6ef032.html</loc>
+    <loc>http://lethisis.com/archives/eaf0f2.html</loc>
     <lastmod>2017-10-31T02:20:17.000Z</lastmod>
     <data>
         <display>
-        <title>android蓝牙了解</title>
-        <pubTime>2017-10-19T02:51:10.000Z</pubTime>
+        <title>android内存管理</title>
+        <pubTime>2017-10-30T08:52:31.000Z</pubTime>
         
         <tag>Android</tag>
          
-        <tag>学习</tag>
+        <tag>内存</tag>
          
-        <tag>蓝牙</tag>
+        <tag>memory</tag>
          
          
            
@@ -67,6 +91,28 @@
            
              
               <breadCrumb title="android" url="http://lethisis.com/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lethisis.com/archives/34039b4c.html</loc>
+    <lastmod>2017-10-31T02:20:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>React学习（一）</title>
+        <pubTime>2017-10-19T02:45:13.000Z</pubTime>
+        
+        <tag>学习</tag>
+         
+        <tag>react</tag>
+         
+         
+           
+             
+              <breadCrumb title="react" url="http://lethisis.com/categories/react/"/>
           
         </display>
     </data>
@@ -118,21 +164,23 @@
 
     
   <url>
-    <loc>http://lethisis.com/archives/34039b4c.html</loc>
+    <loc>http://lethisis.com/archives/99e7619d.html</loc>
     <lastmod>2017-10-31T02:20:17.000Z</lastmod>
     <data>
         <display>
-        <title>React学习（一）</title>
-        <pubTime>2017-10-19T02:45:13.000Z</pubTime>
+        <title>Android N Signature Scheme v2 渠道打包</title>
+        <pubTime>2017-10-19T02:22:59.000Z</pubTime>
         
-        <tag>学习</tag>
+        <tag>Android</tag>
          
-        <tag>react</tag>
+        <tag>打包</tag>
+         
+        <tag>android N</tag>
          
          
            
              
-              <breadCrumb title="react" url="http://lethisis.com/categories/react/"/>
+              <breadCrumb title="android" url="http://lethisis.com/categories/android/"/>
           
         </display>
     </data>
@@ -162,18 +210,18 @@
 
     
   <url>
-    <loc>http://lethisis.com/archives/99e7619d.html</loc>
+    <loc>http://lethisis.com/archives/7e6ef032.html</loc>
     <lastmod>2017-10-31T02:20:17.000Z</lastmod>
     <data>
         <display>
-        <title>Android N Signature Scheme v2 渠道打包</title>
-        <pubTime>2017-10-19T02:22:59.000Z</pubTime>
+        <title>android蓝牙了解</title>
+        <pubTime>2017-10-19T02:51:10.000Z</pubTime>
         
         <tag>Android</tag>
          
-        <tag>打包</tag>
+        <tag>学习</tag>
          
-        <tag>android N</tag>
+        <tag>蓝牙</tag>
          
          
            
@@ -186,18 +234,16 @@
 
     
   <url>
-    <loc>http://lethisis.com/archives/eaf0f2.html</loc>
+    <loc>http://lethisis.com/archives/84bb15ba.html</loc>
     <lastmod>2017-10-31T02:20:17.000Z</lastmod>
     <data>
         <display>
-        <title>android内存管理</title>
-        <pubTime>2017-10-30T08:52:31.000Z</pubTime>
+        <title>setSpan 冲突问题</title>
+        <pubTime>2017-10-16T10:12:38.000Z</pubTime>
         
         <tag>Android</tag>
          
-        <tag>内存</tag>
-         
-        <tag>memory</tag>
+        <tag>span</tag>
          
          
            
@@ -222,28 +268,6 @@
         <tag>fitsSystemWindows</tag>
          
         <tag>浸入式</tag>
-         
-         
-           
-             
-              <breadCrumb title="android" url="http://lethisis.com/categories/android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://lethisis.com/archives/84bb15ba.html</loc>
-    <lastmod>2017-10-31T02:20:17.000Z</lastmod>
-    <data>
-        <display>
-        <title>setSpan 冲突问题</title>
-        <pubTime>2017-10-16T10:12:38.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>span</tag>
          
          
            

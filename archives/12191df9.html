@@ -95,7 +95,7 @@
 
 
 
-  <meta name="keywords" content="弱引用,java," />
+  <meta name="keywords" content="学习,kotlin,持续更新," />
 
 
 
@@ -108,21 +108,18 @@
 
 
 
-<meta name="description" content="1compile &amp;apos;com.anthonycr.grant:permissions:1.1.2&amp;apos; 版本更新后，作者为了避免内存泄漏，在源码中添加了一个弱引用来存储一个抽象类。 但在用户有多个权限需要选择的时候，抽象类有时候会被回收。当用户确认权限之后，没有调用到回调函数。 android内存空间分配 首先, 让我们快速看下Android启动流程. 与众多基于Linux内核的系统">
-<meta name="keywords" content="弱引用,java">
+<meta name="description" content="var 和 val  （Declaring Properties） val and var are the two keywords you can use to declare variables (and properties). The difference is that using val gives you a read-only variable, which is the same">
+<meta name="keywords" content="学习,kotlin,持续更新">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WeakReference 弱引用与内存泄漏">
-<meta property="og:url" content="http://lethisis.com/archives/5788d435.html">
+<meta property="og:title" content="Kotlin 学习笔记">
+<meta property="og:url" content="http://lethisis.com/archives/12191df9.html">
 <meta property="og:site_name" content="小面包屑的博客">
-<meta property="og:description" content="1compile &amp;apos;com.anthonycr.grant:permissions:1.1.2&amp;apos; 版本更新后，作者为了避免内存泄漏，在源码中添加了一个弱引用来存储一个抽象类。 但在用户有多个权限需要选择的时候，抽象类有时候会被回收。当用户确认权限之后，没有调用到回调函数。 android内存空间分配 首先, 让我们快速看下Android启动流程. 与众多基于Linux内核的系统">
+<meta property="og:description" content="var 和 val  （Declaring Properties） val and var are the two keywords you can use to declare variables (and properties). The difference is that using val gives you a read-only variable, which is the same">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1760285-29c0ee6ae9953466.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1760285-f18af8448ad77696.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-10-31T02:20:17.000Z">
+<meta property="og:updated_time" content="2017-11-02T08:26:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WeakReference 弱引用与内存泄漏">
-<meta name="twitter:description" content="1compile &amp;apos;com.anthonycr.grant:permissions:1.1.2&amp;apos; 版本更新后，作者为了避免内存泄漏，在源码中添加了一个弱引用来存储一个抽象类。 但在用户有多个权限需要选择的时候，抽象类有时候会被回收。当用户确认权限之后，没有调用到回调函数。 android内存空间分配 首先, 让我们快速看下Android启动流程. 与众多基于Linux内核的系统">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1760285-29c0ee6ae9953466.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="Kotlin 学习笔记">
+<meta name="twitter:description" content="var 和 val  （Declaring Properties） val and var are the two keywords you can use to declare variables (and properties). The difference is that using val gives you a read-only variable, which is the same">
 
 
 
@@ -152,13 +149,13 @@
 
 
 
-  <link rel="canonical" href="http://lethisis.com/archives/5788d435.html"/>
+  <link rel="canonical" href="http://lethisis.com/archives/12191df9.html"/>
 
 
 
 
 
-  <title>WeakReference 弱引用与内存泄漏 | 小面包屑的博客</title>
+  <title>Kotlin 学习笔记 | 小面包屑的博客</title>
   
 
 
@@ -305,7 +302,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lethisis.com/archives/5788d435.html">
+    <link itemprop="mainEntityOfPage" href="http://lethisis.com/archives/12191df9.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小面包屑">
@@ -322,7 +319,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">WeakReference 弱引用与内存泄漏</h1>
+          <h1 class="post-title" itemprop="name headline">Kotlin 学习笔记</h1>
         
 
         <div class="post-meta">
@@ -334,8 +331,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-19T10:49:07+08:00">
-                2017-10-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-02T16:20:22+08:00">
+                2017-11-02
               </time>
             
 
@@ -357,8 +354,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
                   </a>
                 </span>
 
@@ -374,7 +371,7 @@
 
           
           
-             <span id="/archives/5788d435.html" class="leancloud_visitors" data-flag-title="WeakReference 弱引用与内存泄漏">
+             <span id="/archives/12191df9.html" class="leancloud_visitors" data-flag-title="Kotlin 学习笔记">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -405,39 +402,37 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile &apos;com.anthonycr.grant:permissions:1.1.2&apos;</div></pre></td></tr></table></figure>
-<p>版本更新后，作者为了避免内存泄漏，在源码中添加了一个弱引用来存储一个抽象类。</p>
-<p>但在用户有多个权限需要选择的时候，抽象类有时候会被回收。当用户确认权限之后，没有调用到回调函数。</p>
-<h1 id="android内存空间分配"><a href="#android内存空间分配" class="headerlink" title="android内存空间分配"></a>android内存空间分配</h1><blockquote>
-<p>首先, 让我们快速看下Android启动流程. 与众多基于Linux内核的系统类似, 启动系统时, bootloader启动内核和init进程. init进程分裂出更多名为”daemons(守护进程)”的底层的Linux进程, 诸如android debug deamon, USB deamon等. 这些守护进程处理底层硬件相关的接口.</p>
-<p>随后, init进程会启动一个非常有意思的进程—“Zygote”. 顾名思义, 这是一个Android平台的非常基础的进程. 这个进程初始化了第一个VM, 并且预加载了framework和众多App所需要的通用资源. 然后它开启一个Socket接口来监听请求, 根据请求孵化出新的VM来管理新的App进程. 一旦收到新的请求, Zygote会基于自身预先加载的VM来孵化出一个新的VM创建一个新的进程.</p>
-<p>启动Zygote之后, init进程会启动runtime进程. Zygote会孵化出一个超级管理进程—System Server. SystemServer会启动所有系统核心服务, 例如Activity Manager Service, 硬件相关的Service等. 到此, 系统准备好启动它的第一个App进程—Home进程了.</p>
+        <h2 id="var-和-val-（Declaring-Properties）"><a href="#var-和-val-（Declaring-Properties）" class="headerlink" title="var 和 val  （Declaring Properties）"></a>var 和 val  （Declaring Properties）</h2><blockquote>
+<p>val and var are the two keywords you can use to declare variables (and properties). The difference is that using val gives you a read-only variable, which is the same as using the final keyword in Java.</p>
 </blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1760285-29c0ee6ae9953466.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="app launch"></p>
-<blockquote>
-<p>当启动一个Android程序时，会启动一个Dalvik VM进程，系统会给它分配固定的内存空间（16M,32M不定），这块内存空间会映射到RAM上某个区域。然后这个Android程序就会运行在这块空间上。Java里会将这块空间分成Stack栈内存和Heap堆内存。stack里存放对象的引用，heap里存放实际对象数据。<br>在程序运行中会创建对象，如果未合理管理内存，比如不及时回收无效空间就会造成内存泄露，严重的话可能导致使用内存超过系统分配内存，即内存溢出OOM，导致程序卡顿甚至直接退出。</p>
-</blockquote>
-<p><img src="http://upload-images.jianshu.io/upload_images/1760285-f18af8448ad77696.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="dalvik的Heap和Stack"></p>
-<p>也就是带有回调函数的对象会放到内存堆中。当然，一般处理内存泄漏都是处理内存堆，这里只是提一下。</p>
+<p>val 和 var 都是声明变量的关键字。不同点在于val 是只读变量，相当于java中的final变量，因此创建的时候必须初始化。</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="number">10</span>    <span class="comment">// int x = 10;</span></div><div class="line"><span class="keyword">val</span> y = <span class="number">25</span>    <span class="comment">// final int y = 25;</span></div></pre></td></tr></table></figure>
 <a id="more"></a>
-<h1 id="弱引用"><a href="#弱引用" class="headerlink" title="弱引用"></a>弱引用</h1><blockquote>
-<p>在Java里, 当一个对象o被创建时, 它被放在Heap里. 当GC运行的时候, 如果发现没有任何引用指向o, o就会被回收以腾出内存空间. 或者换句话说, 一个对象被回收, 必须满足两个条件: 1)没有任何引用指向它 2)GC被运行</p>
+<h2 id="Objects"><a href="#Objects" class="headerlink" title="Objects"></a>Objects</h2><blockquote>
+<p>参考：<a href="http://www.jianshu.com/p/ba3d13581a06" target="_blank" rel="external">http://www.jianshu.com/p/ba3d13581a06</a></p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">addPendingAction</span><span class="params">(@NonNull String[] permissions,</span></span></div><div class="line"><span class="function"><span class="params">                                            @Nullable PermissionsResultAction action)</span> </span>&#123;</div><div class="line">     <span class="keyword">if</span> (action == <span class="keyword">null</span>) &#123;</div><div class="line">         <span class="keyword">return</span>;</div><div class="line">     &#125;</div><div class="line">     action.registerPermissions(permissions);</div><div class="line">     mPendingActions.add(<span class="keyword">new</span> WeakReference&lt;&gt;(action));</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">notifyPermissionsChange</span><span class="params">(@NonNull String[] permissions, @NonNull <span class="keyword">int</span>[] results)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> size = permissions.length;</div><div class="line">    <span class="keyword">if</span> (results.length &lt; size) &#123;</div><div class="line">        size = results.length;</div><div class="line">    &#125;</div><div class="line">    Iterator&lt;WeakReference&lt;PermissionsResultAction&gt;&gt; iterator = mPendingActions.iterator();</div><div class="line">    <span class="keyword">while</span> (iterator.hasNext()) &#123;</div><div class="line">        PermissionsResultAction action = iterator.next().get();</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> n = <span class="number">0</span>; n &lt; size; n++) &#123;</div><div class="line">            <span class="keyword">if</span> (action == <span class="keyword">null</span> || action.onResult(permissions[n], results[n])) &#123;</div><div class="line">                iterator.remove();</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> n = <span class="number">0</span>; n &lt; size; n++) &#123;</div><div class="line">        mPendingRequests.remove(permissions[n]);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>在源码中执行到这儿的时候，action有时候变成了null 。</p>
-<p>在addPendingAction操作中有PermissionsResultAction（强引用）引用指向，但到notifyPermissionsChange（）的时候PermissionsResultAction依然被系统回收了，回调函数不被执行。</p>
-<p> 这是因为编译器在发现进入while循环之后, PermissionsResultAction已经没有被使用, 所以进行了优化(将其置空).</p>
-<p>写了一段测试代码，对象最后的确被回收了。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line"></div><div class="line">      List&lt;WeakReference&lt;PermissionAction&gt;&gt; mPendingActions = <span class="keyword">new</span> ArrayList&lt;&gt;(<span class="number">1</span>);</div><div class="line"></div><div class="line"></div><div class="line">      mPendingActions.add(<span class="keyword">new</span> WeakReference&lt;&gt;(<span class="keyword">new</span> PermissionAction()));</div><div class="line"></div><div class="line"></div><div class="line">      <span class="keyword">int</span> i = <span class="number">0</span>;</div><div class="line">      WeakReference&lt;PermissionAction&gt; actionPermission = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">      Iterator&lt;WeakReference&lt;PermissionAction&gt;&gt; iterator = mPendingActions.iterator();</div><div class="line"></div><div class="line">      <span class="keyword">if</span>(iterator.hasNext())&#123;</div><div class="line">          actionPermission = iterator.next();</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</div><div class="line">          PermissionAction action = actionPermission.get();</div><div class="line"></div><div class="line">          <span class="keyword">if</span> (action != <span class="keyword">null</span>) &#123;</div><div class="line">              i++;</div><div class="line">              System.out.println(<span class="string">"Object is alive for "</span> + i + <span class="string">" loops - "</span> + action);</div><div class="line">          &#125; <span class="keyword">else</span> &#123;</div><div class="line">              System.out.println(<span class="string">"Object has been collected."</span>);</div><div class="line">              <span class="keyword">break</span>;</div><div class="line">          &#125;</div><div class="line"></div><div class="line">      &#125;</div><div class="line"></div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<h3 id="1、Object-expression（对象表达式）"><a href="#1、Object-expression（对象表达式）" class="headerlink" title="1、Object expression（对象表达式）"></a>1、Object expression（对象表达式）</h3><blockquote>
+<p>在Android里面，我们对一些点击事件的监听的时候，会使用到匿名内部类<br>而在Kotlin中，就用对象表达式来替换匿名内部类，是这样子来写的<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">fab.setOnClickListener(</div><div class="line">            <span class="keyword">object</span> : View.OnClickListener &#123;</div><div class="line">                <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">onClick</span><span class="params">(v: <span class="type">View</span>?)</span></span> &#123;</div><div class="line">                &#125; </div><div class="line">            &#125;)</div><div class="line"><span class="comment">// 上面可以使用Lambdas简写成</span></div><div class="line"><span class="comment">// fab.setOnClickListener( View.OnClickListener &#123; &#125;)</span></div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>如果父类有构造函数，则必须传递相应的构造函数。多个父类可以用逗号隔开，写在冒号后面<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">open</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span></span>(x: <span class="built_in">Int</span>) &#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">open</span> <span class="keyword">val</span> y: <span class="built_in">Int</span> = x</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">B</span> </span>&#123;...&#125;</div><div class="line"><span class="keyword">val</span> ab: A = <span class="keyword">object</span> : A(<span class="number">1</span>), B &#123;</div><div class="line">    <span class="keyword">override</span> <span class="keyword">val</span> y = <span class="number">15</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>当只需要一个对象just an object，没有父类的情况下<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">val</span> adHoc = <span class="keyword">object</span> &#123;</div><div class="line">    <span class="keyword">var</span> x: <span class="built_in">Int</span> = <span class="number">0</span></div><div class="line">    <span class="keyword">var</span> y: <span class="built_in">Int</span> = <span class="number">0</span></div><div class="line">&#125;</div><div class="line">print(adHoc.x + adHoc.y)</div></pre></td></tr></table></figure></p>
+<p>就像Java的匿名内部类一样，对象表达式中的代码可以访问封闭范围的变量。<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">fun</span> <span class="title">countClicks</span><span class="params">(window: <span class="type">JComponent</span>)</span></span> &#123;</div><div class="line">    <span class="keyword">var</span> clickCount = <span class="number">0</span> <span class="comment">// 如果是Java的话这里要加上final</span></div><div class="line">    <span class="keyword">var</span> enterCount = <span class="number">0</span> <span class="comment">// 这里也是</span></div><div class="line">    window.addMouseListener(<span class="keyword">object</span> : MouseAdapter() &#123;</div><div class="line">        <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">mouseClicked</span><span class="params">(e: <span class="type">MouseEvent</span>)</span></span> &#123;</div><div class="line">            clickCount++</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">mouseEntered</span><span class="params">(e: <span class="type">MouseEvent</span>)</span></span> &#123;</div><div class="line">            enterCount++</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <blockquote>
-<ul>
-<li>WeakReference的一个特点是它何时被回收是不可确定的, 因为这是由GC运行的不确定性所确定的. 所以, 一般用weak reference引用的对象是有价值被cache, 而且很容易被重新被构建, 且很消耗内存的对象.</li>
-</ul>
+<p>与Java不同，封闭范围的变量不需要声明为final</p>
 </blockquote>
-<p>虽然弱引用能让app避免了内存溢出的问题，但也带来了不确定性。</p>
-<p>弱引用可以用于Handler，一般的Handler写法可能会导致内存泄漏。因为非静态的内部类持有外部类的对象，而handler又会由于msg的处理而可能常驻在进程中，在activity或者service destroy后，不能及时被系统回收，导致内存泄漏。<br>建议写法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">OuterHandler</span> <span class="keyword">extends</span> <span class="title">Handler</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">final</span> WeakReference&lt;MainActivity&gt; mActivity;</div><div class="line">         </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">OuterHandler</span><span class="params">(MainActivity activity)</span> </span>&#123;</div><div class="line">      mActivity = <span class="keyword">new</span> WeakReference&lt;MainActivity&gt;(activity);</div><div class="line">    &#125;</div><div class="line">         </div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleMessage</span><span class="params">(Message msg)</span> </span>&#123;</div><div class="line">      MainActivity activity = mActivity.get();</div><div class="line">      <span class="keyword">if</span> (activity != <span class="keyword">null</span>) &#123;</div><div class="line">        <span class="comment">// do something...</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<h3 id="2、Object-declarations（对象声明）"><a href="#2、Object-declarations（对象声明）" class="headerlink" title="2、Object declarations（对象声明）"></a>2、Object declarations（对象声明）</h3><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">object</span> DataProviderManager &#123;</div><div class="line">    <span class="function"><span class="keyword">fun</span> <span class="title">registerDataProvider</span><span class="params">(provider: <span class="type">DataProvider</span>)</span></span> &#123;</div><div class="line">        <span class="comment">// ...</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">val</span> allDataProviders: Collection&lt;DataProvider&gt;</div><div class="line">        <span class="keyword">get</span>() = <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>这样的代码称为一个 对象声明(object declaration), 在 object 关键字之后必须指定对象名称</p>
+<p><em>注意: 对象声明不可以是局部的(也就是说, 不可以直接嵌套在函数之内), 但可以嵌套在另一个对象声明之内, 或者嵌套在另一个非内部类(non-inner class)之内.</em></p>
+</blockquote>
+<h3 id="3、Companion-Objects-伴生对象"><a href="#3、Companion-Objects-伴生对象" class="headerlink" title="3、Companion Objects(伴生对象)"></a>3、Companion Objects(伴生对象)</h3><blockquote>
+<p>Kotlin允许我们去定义一些行为与静态对象一样的对象。尽管这些对象可以用众所周知的模式来实现，比如容易实现的单例模式。<br>我们需要一个类里面有一些静态的属性、常量或者函数，我们可以使用companion objecvt。这个对象被这个类的所有对象所共享，就像Java中的静态属性或者方法。</p>
+</blockquote>
+<hr>
+<p><em>Object expression是马上执行的</em><br><em>Object declaration是lazy的，在第一次使用时执行</em><br><em>Companion Object是在类第一次加载时执行</em></p>
+<hr>
+<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><p>（待续）</p>
+
       
     </div>
     
@@ -457,7 +452,7 @@
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://lethisis.com/archives/5788d435.html" title="WeakReference 弱引用与内存泄漏">http://lethisis.com/archives/5788d435.html</a>
+      <a href="http://lethisis.com/archives/12191df9.html" title="Kotlin 学习笔记">http://lethisis.com/archives/12191df9.html</a>
     </li>
     <li class="post-copyright-license">
       <strong>声明： </strong>
@@ -488,9 +483,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/弱引用/" rel="tag"># 弱引用</a>
+            <a href="/tags/学习/" rel="tag"># 学习</a>
           
-            <a href="/tags/java/" rel="tag"># java</a>
+            <a href="/tags/kotlin/" rel="tag"># kotlin</a>
+          
+            <a href="/tags/持续更新/" rel="tag"># 持续更新</a>
           
         </div>
       
@@ -503,8 +500,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/archives/34039b4c.html" rel="next" title="React学习（一）">
-                <i class="fa fa-chevron-left"></i> React学习（一）
+              <a href="/archives/adc6ee37.html" rel="next" title="Laravel 环境安装 Mac">
+                <i class="fa fa-chevron-left"></i> Laravel 环境安装 Mac
               </a>
             
           </div>
@@ -512,10 +509,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/archives/7e6ef032.html" rel="prev" title="android蓝牙了解">
-                android蓝牙了解 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -679,7 +672,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#android内存空间分配"><span class="nav-number">1.</span> <span class="nav-text">android内存空间分配</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#弱引用"><span class="nav-number">2.</span> <span class="nav-text">弱引用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#var-和-val-（Declaring-Properties）"><span class="nav-number">1.</span> <span class="nav-text">var 和 val  （Declaring Properties）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Objects"><span class="nav-number">2.</span> <span class="nav-text">Objects</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、Object-expression（对象表达式）"><span class="nav-number">2.1.</span> <span class="nav-text">1、Object expression（对象表达式）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、Object-declarations（对象声明）"><span class="nav-number">2.2.</span> <span class="nav-text">2、Object declarations（对象声明）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、Companion-Objects-伴生对象"><span class="nav-number">2.3.</span> <span class="nav-text">3、Companion Objects(伴生对象)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造方法"><span class="nav-number">3.</span> <span class="nav-text">构造方法</span></a></li></ol></div>
             
 
           </div>
