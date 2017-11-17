@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://lethisis.com/archives/7a9897da.html</loc>
+    <lastmod>2017-11-17T08:58:51.000Z</lastmod>
+    <data>
+        <display>
+        <title>关于 android Webview</title>
+        <pubTime>2017-11-17T08:50:34.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>view</tag>
+         
+        <tag>Webview</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://lethisis.com/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://lethisis.com/archives/12191df9.html</loc>
     <lastmod>2017-11-02T08:26:05.000Z</lastmod>
     <data>
@@ -64,28 +88,6 @@
         <tag>内存</tag>
          
         <tag>memory</tag>
-         
-         
-           
-             
-              <breadCrumb title="android" url="http://lethisis.com/categories/android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://lethisis.com/archives/7ff5eb52.html</loc>
-    <lastmod>2017-10-31T02:20:17.000Z</lastmod>
-    <data>
-        <display>
-        <title>JPUSH(极光) 推送通知栏图标</title>
-        <pubTime>2017-10-19T02:42:35.000Z</pubTime>
-        
-        <tag>推送</tag>
-         
-        <tag>Android</tag>
          
          
            
@@ -164,18 +166,16 @@
 
     
   <url>
-    <loc>http://lethisis.com/archives/99e7619d.html</loc>
+    <loc>http://lethisis.com/archives/686fcfd3.html</loc>
     <lastmod>2017-10-31T02:20:17.000Z</lastmod>
     <data>
         <display>
-        <title>Android N Signature Scheme v2 渠道打包</title>
-        <pubTime>2017-10-19T02:22:59.000Z</pubTime>
+        <title>android 内存泄漏(OOM)问题总结</title>
+        <pubTime>2017-10-19T02:29:45.000Z</pubTime>
         
         <tag>Android</tag>
          
-        <tag>打包</tag>
-         
-        <tag>android N</tag>
+        <tag>OOM</tag>
          
          
            
@@ -188,16 +188,38 @@
 
     
   <url>
-    <loc>http://lethisis.com/archives/686fcfd3.html</loc>
+    <loc>http://lethisis.com/archives/7ff5eb52.html</loc>
     <lastmod>2017-10-31T02:20:17.000Z</lastmod>
     <data>
         <display>
-        <title>android 内存泄漏(OOM)问题总结</title>
-        <pubTime>2017-10-19T02:29:45.000Z</pubTime>
+        <title>JPUSH(极光) 推送通知栏图标</title>
+        <pubTime>2017-10-19T02:42:35.000Z</pubTime>
         
         <tag>Android</tag>
          
-        <tag>OOM</tag>
+        <tag>推送</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://lethisis.com/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lethisis.com/archives/84bb15ba.html</loc>
+    <lastmod>2017-10-31T02:20:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>setSpan 冲突问题</title>
+        <pubTime>2017-10-16T10:12:38.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>span</tag>
          
          
            
@@ -234,16 +256,18 @@
 
     
   <url>
-    <loc>http://lethisis.com/archives/84bb15ba.html</loc>
+    <loc>http://lethisis.com/archives/99e7619d.html</loc>
     <lastmod>2017-10-31T02:20:17.000Z</lastmod>
     <data>
         <display>
-        <title>setSpan 冲突问题</title>
-        <pubTime>2017-10-16T10:12:38.000Z</pubTime>
+        <title>Android N Signature Scheme v2 渠道打包</title>
+        <pubTime>2017-10-19T02:22:59.000Z</pubTime>
         
+        <tag>打包</tag>
+         
         <tag>Android</tag>
          
-        <tag>span</tag>
+        <tag>android N</tag>
          
          
            
