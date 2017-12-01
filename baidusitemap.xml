@@ -11,11 +11,11 @@
         <title>2017下半年，一二线互联网公司Android面试题汇总</title>
         <pubTime>2017-12-01T01:54:41.000Z</pubTime>
         
+        <tag>Android</tag>
+         
         <tag>面试</tag>
          
         <tag>2017</tag>
-         
-        <tag>Android</tag>
          
          
            
@@ -100,43 +100,23 @@
 
     
   <url>
-    <loc>http://lethisis.com/archives/686fcfd3.html</loc>
+    <loc>http://lethisis.com/archives/6c4eb5e4.html</loc>
     <lastmod>2017-10-31T02:20:17.000Z</lastmod>
     <data>
         <display>
-        <title>android 内存泄漏(OOM)问题总结</title>
-        <pubTime>2017-10-19T02:29:45.000Z</pubTime>
+        <title>fitsSystemWindows理解</title>
+        <pubTime>2017-10-25T06:45:12.000Z</pubTime>
         
         <tag>Android</tag>
          
-        <tag>OOM</tag>
+        <tag>fitsSystemWindows</tag>
+         
+        <tag>浸入式</tag>
          
          
            
              
               <breadCrumb title="android" url="http://lethisis.com/categories/android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://lethisis.com/archives/34039b4c.html</loc>
-    <lastmod>2017-10-31T02:20:17.000Z</lastmod>
-    <data>
-        <display>
-        <title>React学习（一）</title>
-        <pubTime>2017-10-19T02:45:13.000Z</pubTime>
-        
-        <tag>学习</tag>
-         
-        <tag>react</tag>
-         
-         
-           
-             
-              <breadCrumb title="react" url="http://lethisis.com/categories/react/"/>
           
         </display>
     </data>
@@ -188,6 +168,74 @@
 
     
   <url>
+    <loc>http://lethisis.com/archives/686fcfd3.html</loc>
+    <lastmod>2017-10-31T02:20:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>android 内存泄漏(OOM)问题总结</title>
+        <pubTime>2017-10-19T02:29:45.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>OOM</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://lethisis.com/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lethisis.com/archives/7ff5eb52.html</loc>
+    <lastmod>2017-10-31T02:20:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>JPUSH(极光) 推送通知栏图标</title>
+        <pubTime>2017-10-19T02:42:35.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>推送</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://lethisis.com/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lethisis.com/archives/7e6ef032.html</loc>
+    <lastmod>2017-10-31T02:20:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>android蓝牙了解</title>
+        <pubTime>2017-10-19T02:51:10.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>学习</tag>
+         
+        <tag>蓝牙</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://lethisis.com/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://lethisis.com/archives/99e7619d.html</loc>
     <lastmod>2017-10-31T02:20:17.000Z</lastmod>
     <data>
@@ -195,9 +243,9 @@
         <title>Android N Signature Scheme v2 渠道打包</title>
         <pubTime>2017-10-19T02:22:59.000Z</pubTime>
         
-        <tag>Android</tag>
-         
         <tag>打包</tag>
+         
+        <tag>Android</tag>
          
         <tag>android N</tag>
          
@@ -236,54 +284,6 @@
 
     
   <url>
-    <loc>http://lethisis.com/archives/7e6ef032.html</loc>
-    <lastmod>2017-10-31T02:20:17.000Z</lastmod>
-    <data>
-        <display>
-        <title>android蓝牙了解</title>
-        <pubTime>2017-10-19T02:51:10.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>学习</tag>
-         
-        <tag>蓝牙</tag>
-         
-         
-           
-             
-              <breadCrumb title="android" url="http://lethisis.com/categories/android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://lethisis.com/archives/6c4eb5e4.html</loc>
-    <lastmod>2017-10-31T02:20:17.000Z</lastmod>
-    <data>
-        <display>
-        <title>fitsSystemWindows理解</title>
-        <pubTime>2017-10-25T06:45:12.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>fitsSystemWindows</tag>
-         
-        <tag>浸入式</tag>
-         
-         
-           
-             
-              <breadCrumb title="android" url="http://lethisis.com/categories/android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://lethisis.com/archives/84bb15ba.html</loc>
     <lastmod>2017-10-31T02:20:17.000Z</lastmod>
     <data>
@@ -306,21 +306,21 @@
 
     
   <url>
-    <loc>http://lethisis.com/archives/7ff5eb52.html</loc>
+    <loc>http://lethisis.com/archives/34039b4c.html</loc>
     <lastmod>2017-10-31T02:20:17.000Z</lastmod>
     <data>
         <display>
-        <title>JPUSH(极光) 推送通知栏图标</title>
-        <pubTime>2017-10-19T02:42:35.000Z</pubTime>
+        <title>React学习（一）</title>
+        <pubTime>2017-10-19T02:45:13.000Z</pubTime>
         
-        <tag>Android</tag>
+        <tag>学习</tag>
          
-        <tag>推送</tag>
+        <tag>react</tag>
          
          
            
              
-              <breadCrumb title="android" url="http://lethisis.com/categories/android/"/>
+              <breadCrumb title="react" url="http://lethisis.com/categories/react/"/>
           
         </display>
     </data>
