@@ -5,17 +5,17 @@
     
   <url>
     <loc>http://lethisis.com/archives/780d1e20.html</loc>
-    <lastmod>2017-12-01T02:07:07.000Z</lastmod>
+    <lastmod>2017-12-07T03:13:43.000Z</lastmod>
     <data>
         <display>
         <title>2017下半年，一二线互联网公司Android面试题汇总</title>
         <pubTime>2017-12-01T01:54:41.000Z</pubTime>
         
-        <tag>Android</tag>
-         
         <tag>面试</tag>
          
         <tag>2017</tag>
+         
+        <tag>Android</tag>
          
          
            
@@ -100,30 +100,6 @@
 
     
   <url>
-    <loc>http://lethisis.com/archives/6c4eb5e4.html</loc>
-    <lastmod>2017-10-31T02:20:17.000Z</lastmod>
-    <data>
-        <display>
-        <title>fitsSystemWindows理解</title>
-        <pubTime>2017-10-25T06:45:12.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>fitsSystemWindows</tag>
-         
-        <tag>浸入式</tag>
-         
-         
-           
-             
-              <breadCrumb title="android" url="http://lethisis.com/categories/android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://lethisis.com/archives/4ea27d37.html</loc>
     <lastmod>2017-10-31T02:20:17.000Z</lastmod>
     <data>
@@ -134,50 +110,6 @@
         <tag>Android</tag>
          
         <tag>ViewDragHelper</tag>
-         
-         
-           
-             
-              <breadCrumb title="android" url="http://lethisis.com/categories/android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://lethisis.com/archives/5788d435.html</loc>
-    <lastmod>2017-10-31T02:20:17.000Z</lastmod>
-    <data>
-        <display>
-        <title>WeakReference 弱引用与内存泄漏</title>
-        <pubTime>2017-10-19T02:49:07.000Z</pubTime>
-        
-        <tag>弱引用</tag>
-         
-        <tag>java</tag>
-         
-         
-           
-             
-              <breadCrumb title="java" url="http://lethisis.com/categories/java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://lethisis.com/archives/686fcfd3.html</loc>
-    <lastmod>2017-10-31T02:20:17.000Z</lastmod>
-    <data>
-        <display>
-        <title>android 内存泄漏(OOM)问题总结</title>
-        <pubTime>2017-10-19T02:29:45.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>OOM</tag>
          
          
            
@@ -212,23 +144,43 @@
 
     
   <url>
-    <loc>http://lethisis.com/archives/7e6ef032.html</loc>
+    <loc>http://lethisis.com/archives/34039b4c.html</loc>
     <lastmod>2017-10-31T02:20:17.000Z</lastmod>
     <data>
         <display>
-        <title>android蓝牙了解</title>
-        <pubTime>2017-10-19T02:51:10.000Z</pubTime>
+        <title>React学习（一）</title>
+        <pubTime>2017-10-19T02:45:13.000Z</pubTime>
         
-        <tag>Android</tag>
-         
         <tag>学习</tag>
          
-        <tag>蓝牙</tag>
+        <tag>react</tag>
          
          
            
              
-              <breadCrumb title="android" url="http://lethisis.com/categories/android/"/>
+              <breadCrumb title="react" url="http://lethisis.com/categories/react/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lethisis.com/archives/5788d435.html</loc>
+    <lastmod>2017-10-31T02:20:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>WeakReference 弱引用与内存泄漏</title>
+        <pubTime>2017-10-19T02:49:07.000Z</pubTime>
+        
+        <tag>弱引用</tag>
+         
+        <tag>java</tag>
+         
+         
+           
+             
+              <breadCrumb title="java" url="http://lethisis.com/categories/java/"/>
           
         </display>
     </data>
@@ -243,11 +195,59 @@
         <title>Android N Signature Scheme v2 渠道打包</title>
         <pubTime>2017-10-19T02:22:59.000Z</pubTime>
         
-        <tag>打包</tag>
-         
         <tag>Android</tag>
          
+        <tag>打包</tag>
+         
         <tag>android N</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://lethisis.com/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lethisis.com/archives/6c4eb5e4.html</loc>
+    <lastmod>2017-10-31T02:20:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>fitsSystemWindows理解</title>
+        <pubTime>2017-10-25T06:45:12.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>fitsSystemWindows</tag>
+         
+        <tag>浸入式</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://lethisis.com/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lethisis.com/archives/7e6ef032.html</loc>
+    <lastmod>2017-10-31T02:20:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>android蓝牙了解</title>
+        <pubTime>2017-10-19T02:51:10.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>学习</tag>
+         
+        <tag>蓝牙</tag>
          
          
            
@@ -306,28 +306,6 @@
 
     
   <url>
-    <loc>http://lethisis.com/archives/34039b4c.html</loc>
-    <lastmod>2017-10-31T02:20:17.000Z</lastmod>
-    <data>
-        <display>
-        <title>React学习（一）</title>
-        <pubTime>2017-10-19T02:45:13.000Z</pubTime>
-        
-        <tag>学习</tag>
-         
-        <tag>react</tag>
-         
-         
-           
-             
-              <breadCrumb title="react" url="http://lethisis.com/categories/react/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://lethisis.com/archives/a0ce5bca.html</loc>
     <lastmod>2017-10-31T02:20:17.000Z</lastmod>
     <data>
@@ -338,6 +316,28 @@
         <tag>Android</tag>
          
         <tag>view</tag>
+         
+         
+           
+             
+              <breadCrumb title="android" url="http://lethisis.com/categories/android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lethisis.com/archives/686fcfd3.html</loc>
+    <lastmod>2017-10-31T02:20:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>android 内存泄漏(OOM)问题总结</title>
+        <pubTime>2017-10-19T02:29:45.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>OOM</tag>
          
          
            
